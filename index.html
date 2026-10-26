@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#133e69"><title>Quét thẻ theo nhóm · iPhone Safari</title>
+<style>
+:root{font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif;color:#16263c;background:#f2f6fa;font-size:15px}*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer;border:1px solid #cdd9e3;background:#fff;border-radius:10px;padding:10px 13px;color:#1c3551}button:disabled{opacity:.55}button.primary{background:#1764b5;color:white;border-color:#1764b5}button.success{background:#116c4d;color:#fff;border-color:#116c4d}button.danger{color:#a3233a;border-color:#e9bac4}button:active{transform:translateY(1px)}header{position:sticky;top:0;z-index:12;background:#123b63;color:white;padding:12px 15px;display:flex;gap:12px;align-items:center;justify-content:space-between}header small{display:block;color:#bed6ed;font-size:.78rem}header strong{font-size:1.05rem}header button{background:#285779;border-color:#537b9b;color:white;padding:7px 10px}.nav{display:grid;grid-template-columns:repeat(4,1fr);background:white;position:sticky;top:60px;z-index:11;box-shadow:0 1px 4px #0c29451c}.nav button{border:0;border-radius:0;padding:12px 4px;font-size:.88rem}.nav button.active{color:#1261ae;border-bottom:3px solid #1261ae;background:#f0f7ff;font-weight:700}main{max-width:1000px;margin:auto;padding:14px 12px 52px}.page{display:none}.page.active{display:block}.card{background:white;border:1px solid #e0e8f0;border-radius:16px;padding:16px;margin-bottom:14px;box-shadow:0 3px 10px #18355208}.card h2{margin:0 0 10px;font-size:1.13rem}.card h3{margin:5px 0 10px;font-size:1rem}.muted{color:#61758b;font-size:.89rem;line-height:1.5}.control{display:flex;align-items:center;flex-wrap:wrap;gap:8px}.control>*{flex-shrink:0}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.row4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}label{font-size:.91rem;font-weight:650;display:block;margin:8px 0 5px}input,select,textarea{max-width:100%;width:100%;border:1px solid #bdcedf;border-radius:9px;padding:10px;background:#fff;color:#20344d}textarea{min-height:100px;resize:vertical}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}.stat{text-align:center;background:#f0f5fa;border-radius:11px;padding:11px 2px}.stat b{font-size:1.55rem;display:block;color:#123f69}.stat span{font-size:.81rem;color:#637c93}.tag{display:inline-block;background:#e8f4ec;color:#116942;font-size:.82rem;border-radius:20px;padding:4px 9px}.warn{background:#fff6e2;border-left:4px solid #e6a62b;padding:10px 12px;border-radius:5px;color:#73520c}.ok{background:#e8f7ee;border-left:4px solid #24a164;padding:10px 12px;color:#1d6445;border-radius:5px}.camera{width:100%;position:relative;background:#061726;border-radius:12px;overflow:hidden;aspect-ratio:4/3;min-height:210px;max-height:540px}.camera video{width:100%;height:100%;position:absolute;inset:0;object-fit:contain}.camera canvas.overlay{width:100%;height:100%;position:absolute;inset:0;pointer-events:none}.cam-placeholder{color:#d7e7f4;position:absolute;top:43%;width:100%;text-align:center;font-size:1rem}.scanlines{display:flex;gap:7px;flex-wrap:wrap}.choice{font-size:1.1rem;font-weight:700;border:1px solid #b9ccd9;border-radius:10px;padding:8px 12px;display:inline-block}.choice.A{background:#e7f2ff;color:#1d65ae}.choice.B{background:#e2f5eb;color:#176c4c}.choice.C{background:#fff3dc;color:#905e10}.choice.D{background:#f7eafa;color:#82409c}.qnum{font-weight:800;color:#0b548f;font-size:1.7rem}.list-scan{display:flex;gap:6px;flex-wrap:wrap;max-height:240px;overflow:auto}.chip{padding:5px 8px;border-radius:8px;background:#e8f0f8;font-size:.85rem;white-space:nowrap}.chip.missing{background:#fff0ec;color:#a34431}.chip.hit{background:#e7f7ee;color:#116c4d}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th,td{border-bottom:1px solid #e3eaf1;text-align:left;padding:9px 8px}th{background:#f3f7fa;color:#436079;font-size:.87rem}td input{padding:5px 7px;width:180px;min-width:180px}.ansbtn{padding:6px 10px;margin:2px;min-width:40px}.ansbtn.selected{background:#1764b5;color:#fff}.keyinput{width:68px!important;min-width:68px!important}a{color:#1764b5}.pills{display:flex;gap:8px;flex-wrap:wrap}.pills .p{padding:7px 9px;background:#eff5fb;border-radius:8px;color:#345f80;font-size:.87rem}#messages{position:fixed;bottom:15px;left:12px;right:12px;z-index:100;pointer-events:none;display:flex;flex-direction:column;gap:5px}#messages div{background:#133951;color:white;padding:12px 16px;border-radius:10px;box-shadow:0 6px 20px #142c4666}.small{font-size:.82rem}.hide{display:none!important}.box-margin{margin-top:12px}@media(max-width:540px){.row{grid-template-columns:1fr}.card{padding:13px}.control button{flex:1}.nav button{font-size:.83rem}.stats{gap:5px}main{padding:10px 9px 50px}header{padding:10px}#btnstop{min-width:90px}.camera{aspect-ratio:3/4}}@media print{header,.nav,.noprint,button{display:none!important}main{padding:0}.page{display:block!important}.card{box-shadow:none}}
+</style>
+</head>
+<body>
+<header><div><strong>▣ QUÉT THẺ LỚP HỌC</strong><small>48 học sinh • Mã cố định • Quét nhóm tự do</small></div><button type="button" id="backup-top" title="Sao lưu dữ liệu">⬇ Sao lưu</button></header>
+<div class="nav"><button data-tab="scan" class="active">📷 Quét</button><button data-tab="class">👥 Lớp</button><button data-tab="report">📊 Kết quả</button><button data-tab="guide">ⓘ Hướng dẫn</button></div>
+<main>
+<section class="page active" id="page-scan">
+<div class="card"><div class="control" style="justify-content:space-between"><div><div class="muted">Bài kiểm tra hiện tại</div><div id="exam-display" style="font-weight:750;font-size:1.08rem"></div></div><span class="tag">Lưu trên điện thoại</span></div>
+<div class="stats"><div class="stat"><b id="stat-total">48</b><span>Có mặt dự kiến</span></div><div class="stat"><b id="stat-scanned">0</b><span>Đã quét câu này</span></div><div class="stat"><b id="stat-missing">48</b><span>Chưa quét / câu</span></div></div>
+<div class="control"><button id="prev-question">◀ Câu trước</button><span class="qnum">Câu <span id="q-now">1</span></span><button id="next-question" class="primary">Câu sau ▶</button></div>
+<div class="box-margin"><label for="answer-key">Đáp án đúng của câu hiện tại (để trống nếu chưa chấm)</label><div class="control"><select id="answer-key" style="max-width:130px"><option value="">— Chưa đặt —</option><option>A</option><option>B</option><option>C</option><option>D</option></select><label style="margin:0;font-weight:400"><input type="checkbox" id="overwrites" style="width:auto"> Cho phép quét ghi đè đáp án đã nhận</label></div></div></div>
+<div class="card"><h2>Quét thẻ bằng camera</h2><div class="camera"><video id="camera-video" autoplay muted playsinline></video><canvas id="overlay" class="overlay"></canvas><div id="cam-placeholder" class="cam-placeholder">Bấm “Bật camera” để bắt đầu</div></div>
+<canvas id="detector-canvas" class="hide"></canvas>
+<div class="control" style="margin-top:10px"><button class="success" id="btnstart">📷 Bật camera</button><button id="btnstop">Dừng quét</button><button id="btnphoto">📁 Quét từ ảnh</button><input id="image-upload" type="file" accept="image/*" capture="environment" class="hide"></div>
+<div id="scanner-status" class="muted" style="margin-top:8px">Safari iPhone: mở từ trang HTTPS (cài vào màn hình chính trước khi tới lớp). Quét QR bằng jsQR, không cần API BarcodeDetector.</div><p class="small muted">Giữ thẻ đủ gần để mã rõ trong ảnh. Lia chậm qua nhóm bất kỳ khoảng 8 em, không cần biết vị trí ngồi. Thẻ định danh cố định từng em; quét lại sẽ không đếm trùng trong cùng câu. Có thể chụp từng nhóm rồi chọn “Quét từ ảnh”.</p></div>
+<div class="card"><div class="control" style="justify-content:space-between"><h2 style="margin:0">Nhóm quét tự do</h2><button id="new-group" class="primary">＋ Bắt đầu lượt quét mới</button></div>
+<p class="muted">Không giới hạn mã của nhóm theo dãy bàn. Các thẻ mới được nhận kể từ khi bấm “Bắt đầu lượt quét mới” sẽ hiện bên dưới, gắn với đúng họ tên. Dữ liệu đã thu ở câu này vẫn được giữ nguyên.</p>
+<div class="stats"><div class="stat"><b id="group-count">0</b><span>Thẻ mới trong lượt</span></div><div class="stat"><b id="group-present">0</b><span>Đã ghi nhận / câu</span></div><div class="stat"><b id="group-target">48</b><span>Dự kiến có mặt</span></div></div>
+<div class="table-wrap"><table><thead><tr><th>Mã thẻ</th><th>Học sinh</th><th>Chọn</th></tr></thead><tbody id="group-table"><tr><td colspan="3" class="muted">Chưa có mã mới trong lượt quét này.</td></tr></tbody></table></div>
+</div>
+<div class="card"><div class="control" style="justify-content:space-between"><h2 style="margin:0">Phân bố đáp án câu <span id="dist-question">1</span></h2><button id="clear-question" class="danger">Xóa kết quả câu này</button></div>
+<div class="row4" id="distribution"></div>
+<h3 style="margin-top:18px">Đã quét (mã thẻ · họ tên · đáp án)</h3><div class="list-scan" id="scanned-list"></div><h3>Chưa quét (không gồm học sinh báo vắng)</h3><div class="list-scan" id="missing-list"></div>
+<div class="box-margin"><button id="toggle-manual">⌨ Nhập / sửa thủ công</button><div id="manual" class="hide" style="margin-top:10px"><label for="manual-id">Số thẻ học sinh</label><div class="control"><input id="manual-id" type="number" min="1" max="63" style="max-width:90px" placeholder="1"><select id="manual-answer" style="max-width:100px"><option>A</option><option>B</option><option>C</option><option>D</option></select><button id="manual-save" class="primary">Ghi nhận</button><button id="manual-remove">Xóa lựa chọn</button></div></div></div></div>
+</section>
+<section class="page" id="page-class"><div class="card"><h2>Thiết lập lớp học và bài kiểm tra</h2><label>Tên bài kiểm tra</label><input id="exam-title" placeholder="Kiểm tra nhanh Toán 10"><div class="row"><div><label>Tên lớp</label><input id="class-name" placeholder="Lớp 10/1"></div><div><label>Số học sinh/thẻ</label><input id="class-total" type="number" min="1" max="63" value="48"></div></div><div class="control box-margin"><button class="primary" id="save-settings">Lưu thông tin</button><button id="add-question">+ Thêm câu hỏi</button><button id="remove-question">− Bớt câu cuối</button></div><p class="muted">Số câu đang có: <strong id="n-questions">20</strong>. Có thể thêm không giới hạn câu trong thực tế sử dụng thông thường; dung lượng lưu trữ phụ thuộc điện thoại.</p></div>
+<div class="card"><h2>Danh sách học sinh</h2><p class="muted">Mỗi thẻ liên kết cố định với một em, không phụ thuộc chỗ ngồi. Có thể dán danh sách theo thứ tự 01, 02... hoặc từng dòng dạng <code>07;Trần Thị Bình</code> để gán mã bất kỳ. Những tên chưa nhập sẽ hiện “Học sinh xx”.</p><textarea id="names-input" rows="9" placeholder="Nguyễn Văn An&#10;Trần Thị Bình&#10;..."></textarea><div class="control box-margin"><button id="save-names" class="primary">Lưu danh sách</button><button id="template-names">Điền tên mẫu</button></div></div>
+<div class="card"><h2>Điểm danh: học sinh vắng</h2><p class="muted">Nhập các <b>số thẻ vắng</b>, ngăn cách bởi dấu phẩy hoặc khoảng trắng, ví dụ <code>3, 14, 29</code>. Phần mềm sẽ không báo thiếu những mã này, nhưng vẫn giữ nguyên danh tính và thẻ cố định. Nếu sau đó quét được một mã đã đánh dấu vắng, ứng dụng tự bỏ đánh dấu vắng của mã ấy.</p>
+<div class="control"><input id="absent-ids" placeholder="Ví dụ: 3, 14, 29" style="flex:1;min-width:160px"><button id="save-absent" class="primary">Lưu danh sách vắng</button></div><div id="attendance-status" class="muted box-margin"></div></div>
+<div class="card"><h2>Nhập nhanh đáp án đúng</h2><p class="muted">Ví dụ: <code>ABCDABCD</code> ứng với câu 1 đến câu 8. Dùng dấu <code>-</code> cho câu chưa có đáp án. Dấu cách và dấu phẩy được bỏ qua.</p><textarea id="keys-input" rows="4" placeholder="ABCDABCD..."></textarea><div class="control box-margin"><button id="save-keys" class="primary">Lưu đáp án đúng</button></div></div>
+<div class="card"><h2>Quản lý bài kiểm tra</h2><div class="control"><button id="download-json">⬇ Sao lưu JSON</button><button id="import-json">⬆ Khôi phục JSON</button><input type="file" accept=".json,application/json" id="json-upload" class="hide"><button id="new-exam" class="danger">Tạo bài kiểm tra mới</button></div><p class="muted">Dữ liệu nằm trên thiết bị hiện tại. Nên xuất bản sao lưu sau mỗi buổi học. Nút tạo bài mới xóa câu trả lời cũ nhưng giữ danh sách lớp.</p></div>
+</section>
+<section class="page" id="page-report"><div class="card"><h2>Bảng tổng hợp kết quả</h2><div class="control"><button id="export-csv" class="primary">⬇ Xuất Excel (CSV)</button><button id="export-detail">⬇ Xuất từng lượt chọn (CSV)</button><button id="refresh-report">Cập nhật</button></div><div class="stats"><div class="stat"><b id="r-total">48</b><span>Sĩ số lớp</span></div><div class="stat"><b id="r-count">0</b><span>Số câu</span></div><div class="stat"><b id="r-av">—</b><span>Điểm TB / 10</span></div></div><p class="muted">Điểm được tính theo các câu đã nhập đáp án đúng; câu không có đáp án không được tính điểm. Chưa quét được tính là không đúng, chỉ khi đã có đáp án đúng.</p></div><div class="card"><div class="table-wrap"><table id="report-table"></table></div></div></section>
+<section class="page" id="page-guide">
+<div class="card"><h2>Cài đặt trên iPhone (lần đầu cần Internet)</h2>
+<ol style="line-height:1.75;padding-left:24px"><li>Đăng bộ tệp trong thư mục <b>web-iphone</b> lên một dịch vụ lưu trữ website tĩnh có HTTPS (ví dụ GitHub Pages).</li>
+<li>Mở URL HTTPS đó bằng <b>Safari trên iPhone</b> khi có Internet; phải thấy được giao diện, chờ tải thư viện QR hoàn tất.</li>
+<li>Nhấn nút Chia sẻ trên Safari, chọn <b>Thêm vào Màn hình chính</b> rồi mở biểu tượng ứng dụng vừa tạo.</li>
+<li>Nhấn <b>Kiểm tra lưu ngoại tuyến</b> bên dưới. Sau đó bật Chế độ máy bay và mở lại từ biểu tượng, thử quét bộ bốn thẻ trước khi lên lớp.</li>
+</ol><div class="control"><button id="check-offline">Kiểm tra lưu ngoại tuyến</button></div>
+<div id="offline-check-result" class="muted" style="margin-top:8px">Ứng dụng chưa kiểm tra bộ nhớ ngoại tuyến.</div>
+</div>
+<div class="card"><h2>Quét cả dãy thay vì từng học sinh</h2>
+<ol style="line-height:1.75;padding-left:24px"><li>In <b>bộ thẻ QR riêng 48 học sinh</b> (không dùng thẻ chính hãng Plickers).</li>
+<li>Nhập lớp, danh sách theo số thẻ, nhập đáp án đúng khi cần.</li>
+<li>Chiếu câu hỏi trên TV, học sinh xoay thẻ để chữ <b>A/B/C/D ở phía trên</b>.</li>
+<li>Bấm Bật camera, lia chậm từng dãy. Ứng dụng chia mỗi khung hình thành <b>4 vùng chồng lấn</b>, cố gắng nhận nhiều mã và gộp số đã quét.</li>
+<li>Để tăng độ chính xác, có thể chọn <b>Quét từ ảnh</b> rồi chụp một dãy 5–15 thẻ đang giơ lên; thực hiện thêm ảnh cho dãy tiếp theo.</li>
+<li>Chỉ quét bổ sung những số còn thiếu, chuyển câu, cuối giờ xuất CSV và sao lưu JSON.</li>
+</ol><div class="warn"><b>Đặc biệt:</b> Trình quét Safari bản web sử dụng thư viện jsQR JavaScript, không dùng BarcodeDetector. Khả năng đọc nhiều thẻ/giây phụ thuộc đời iPhone, ánh sáng, độ rõ và khoảng cách thẻ. Chưa kiểm thử với 45 em ngoài thực tế. Muốn quét nhiều mã nhanh và ổn định hơn, xem <b>bản ứng dụng iOS gốc bằng Apple Vision</b> trong cùng gói ZIP (cần Mac để biên dịch/cài).</div></div>
+<div class="card"><h2>Bảo vệ dữ liệu</h2><p class="muted">Thông tin câu trả lời lưu trong bộ nhớ trình duyệt trên iPhone. Thư viện JavaScript được tải từ CDN khi cài lần đầu; các ảnh camera được giải mã ngay trên máy, không gửi lên hệ thống. Khi dùng bộ nhớ web, dữ liệu có thể mất do xóa Safari/thu hồi bộ nhớ; nên xuất CSV và JSON sau mỗi giờ. Trước mỗi buổi học, kiểm tra chạy được ở chế độ máy bay.</p></div>
+</section>
+</main><div id="messages" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+<script>
+'use strict';
+const STORAGE='qr_lop_hoc_v1';
+const fresh=()=>({version:3,title:'Kiểm tra nhanh',className:'Lớp 10/1',total:48,question:1,questions:Array.from({length:20},()=>({key:'',answers:{}})),names:[],absentIds:[],updated:new Date().toISOString()});
+let S;try{S=JSON.parse(localStorage.getItem(STORAGE))||fresh();if(!Array.isArray(S.questions)||!S.questions.length)S=fresh()}catch(e){S=fresh()}
+S.absentIds=Array.isArray(S.absentIds)?[...new Set(S.absentIds.map(Number).filter(n=>Number.isInteger(n)&&n>0&&n<=63))]:[];
+const groupHits=new Map();
+const $=x=>document.getElementById(x), e=v=>String(v??'').replace(/[&<>"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
+const max=()=>Math.max(1,Math.min(63,Math.floor(+S.total)||48));const qs=()=>S.questions[S.question-1];const curAns=()=>qs().answers;
+function store(){S.updated=new Date().toISOString();try{localStorage.setItem(STORAGE,JSON.stringify(S))}catch(err){toast('Không lưu được: bộ nhớ đầy. Hãy xuất JSON.') }}
+function toast(msg){const node=document.createElement('div');node.textContent=msg;$('messages').append(node);setTimeout(()=>node.remove(),3300)}
+function students(){return Array.from({length:max()},(_,i)=>({id:i+1,name:S.names[i]||`Học sinh ${String(i+1).padStart(2,'0')}`}))}
+const absent=()=>new Set((S.absentIds||[]).map(Number).filter(id=>id>0&&id<=max()));
+const expected=()=>max()-absent().size;
+function presentAnswerCount(){return students().filter(s=>!absent().has(s.id)&&curAns()[s.id]).length}
+function renderGroup(){
+ const rows=[...groupHits.entries()].sort((a,b)=>a[0]-b[0]);
+ $('group-count').textContent=rows.length;$('group-present').textContent=presentAnswerCount();$('group-target').textContent=expected();
+ $('group-table').innerHTML=rows.length?rows.map(([id,a])=>`<tr><td>${String(id).padStart(2,'0')}</td><td>${e(S.names[id-1]||'Học sinh '+String(id).padStart(2,'0'))}</td><td><b>${e(a)}</b></td></tr>`).join(''):'<tr><td colspan="3" class="muted">Chưa có mã mới trong lượt quét này.</td></tr>';
+}
+$('new-group').onclick=()=>{groupHits.clear();renderGroup();toast('Đã bắt đầu lượt quét tự do mới. Đáp án của câu vẫn được giữ nguyên.')};
+function go(tab){document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));document.querySelectorAll('.page').forEach(el=>el.classList.toggle('active',el.id==='page-'+tab));if(tab==='class')refreshClass();if(tab==='report')renderReport();if(tab!=='scan')stopCamera()}
+document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>go(b.dataset.tab));
+function renderScan(){
+ const a=curAns(), abs=absent(), count=presentAnswerCount(), people=students();
+ $('exam-display').textContent=`${S.className} · ${S.title}`;
+ $('q-now').textContent=S.question;$('dist-question').textContent=S.question;
+ $('stat-total').textContent=expected();$('stat-scanned').textContent=count;$('stat-missing').textContent=Math.max(0,expected()-count);
+ $('answer-key').value=qs().key||'';
+ const dist={A:0,B:0,C:0,D:0};people.forEach(s=>{if(a[s.id]&&dist[a[s.id]]!==undefined)dist[a[s.id]]++});
+ $('distribution').innerHTML=Object.entries(dist).map(([k,n])=>`<div class="stat"><b>${n}</b><span>${k}</span></div>`).join('');
+ $('scanned-list').innerHTML=people.filter(s=>a[s.id]).map(s=>`<span class="chip hit"><b>${String(s.id).padStart(2,'0')}</b> ${e(s.name)}: <b>${e(a[s.id])}</b></span>`).join('')||'<span class="muted">Chưa quét thẻ nào.</span>';
+ $('missing-list').innerHTML=people.filter(s=>!abs.has(s.id)&&!a[s.id]).map(s=>`<span class="chip missing"><b>${String(s.id).padStart(2,'0')}</b> ${e(s.name)}</span>`).join('')||'<span class="muted">Đã quét đầy đủ học sinh có mặt.</span>';
+ renderGroup();
+}
+function next(delta){seen.clear();groupHits.clear();S.question=Math.max(1,S.question+delta);while(S.questions.length<S.question)S.questions.push({key:'',answers:{}});store();renderScan();toast('Đang ở câu '+S.question)}
+$('prev-question').onclick=()=>next(-1);$('next-question').onclick=()=>next(1);$('answer-key').onchange=ev=>{qs().key=ev.target.value;store();renderScan()};$('clear-question').onclick=()=>{if(confirm('Xóa mọi đáp án đã quét của câu '+S.question+'?')){qs().answers={};groupHits.clear();store();renderScan();toast('Đã xóa kết quả câu '+S.question)}};
+$('toggle-manual').onclick=()=>$('manual').classList.toggle('hide');
+function record(id,answer,manual=false){
+ id=Number(id);if(!Number.isInteger(id)||id<1||id>max()||!['A','B','C','D'].includes(answer))return false;
+ let prev=curAns()[id];if(prev&&!manual&&!$('overwrites').checked)return false;if(prev===answer)return false;
+ curAns()[id]=answer;groupHits.set(id,answer);
+ if(absent().has(id))S.absentIds=S.absentIds.filter(x=>Number(x)!==id);
+ store();renderScan();return true;
+}
+$('manual-save').onclick=()=>{if(record($('manual-id').value,$('manual-answer').value,true))toast('Đã ghi thẻ '+$('manual-id').value);else toast('Số thẻ hoặc đáp án không hợp lệ / không thay đổi')};
+$('manual-remove').onclick=()=>{const id=+$('manual-id').value;if(!Number.isInteger(id)||id<1||id>max())return toast('Nhập số thẻ hợp lệ');delete curAns()[id];groupHits.delete(id);store();renderScan();toast('Đã xóa đáp án thẻ '+id)};
+function refreshClass(){$('exam-title').value=S.title;$('class-name').value=S.className;$('class-total').value=S.total;$('names-input').value=Array.from({length:max()},(_,i)=>S.names[i]||'').join('\n').trimEnd();$('absent-ids').value=(S.absentIds||[]).join(', ');$('attendance-status').textContent=`Sĩ số: ${max()}, vắng: ${absent().size}, dự kiến có mặt: ${expected()}.`;$('n-questions').textContent=S.questions.length;$('keys-input').value=S.questions.map(x=>x.key||'-').join('')}
+$('save-settings').onclick=()=>{let newTotal=+$('class-total').value;if(!Number.isInteger(newTotal)||newTotal<1||newTotal>63)return toast('Số học sinh từ 1 đến 63');S.title=$('exam-title').value.trim()||'Bài kiểm tra';S.className=$('class-name').value.trim()||'Lớp học';S.total=newTotal;store();refreshClass();renderScan();toast('Đã lưu thông tin lớp')};
+$('save-names').onclick=()=>{
+ const lines=$('names-input').value.replace(/\r/g,'').split('\n');let names=Array.from({length:63},()=>''),sequential=0;
+ for(const line of lines){if(!line.trim())continue;
+   const match=line.match(/^\s*(\d{1,2})\s*[;\t]\s*(.+)\s*$/);
+   if(match){const id=Number(match[1]);if(id>=1&&id<=63)names[id-1]=match[2].trim()}
+   else {while(sequential<63&&names[sequential])sequential++;if(sequential<63)names[sequential++]=line.trim()}
+ }
+ S.names=names;store();renderScan();toast('Đã lưu ánh xạ số thẻ → họ tên học sinh')
+};
+$('save-absent').onclick=()=>{
+ const raw=$('absent-ids').value.trim();
+ if(raw&&!/^[0-9,;\s]+$/.test(raw))return toast('Chỉ nhập số thẻ vắng, ngăn cách dấu phẩy hoặc khoảng trắng');
+ const values=raw?raw.split(/[,;\s]+/).filter(Boolean).map(Number):[];
+ if(values.some(id=>!Number.isInteger(id)||id<1||id>max()))return toast('Số thẻ vắng phải trong khoảng 1 đến '+max());
+ const scannedAlready=new Set(S.questions.flatMap(q=>Object.keys(q.answers||{}).map(Number)));
+ S.absentIds=[...new Set(values.filter(id=>!scannedAlready.has(id)))].sort((a,b)=>a-b);
+ store();refreshClass();renderScan();toast('Đã cập nhật '+S.absentIds.length+' thẻ vắng. Mã đã có câu trả lời không bị đánh dấu vắng.')
+};
+$('template-names').onclick=()=>{$('names-input').value=Array.from({length:max()},(_,i)=>`Học sinh ${String(i+1).padStart(2,'0')}`).join('\n')};
+$('add-question').onclick=()=>{S.questions.push({key:'',answers:{}});store();refreshClass();toast('Tổng cộng '+S.questions.length+' câu')};
+$('remove-question').onclick=()=>{if(S.questions.length===1)return toast('Cần ít nhất 1 câu');const last=S.questions.at(-1);if(Object.keys(last.answers).length&&!confirm('Câu cuối đã có bài quét. Xóa câu này?'))return;S.questions.pop();S.question=Math.min(S.question,S.questions.length);store();refreshClass();renderScan()};
+$('save-keys').onclick=()=>{const str=$('keys-input').value.toUpperCase().replace(/[\s,;|]/g,'');if(!/^[ABCD-]*$/.test(str))return toast('Chỉ nhập A/B/C/D hoặc dấu -');while(S.questions.length<str.length)S.questions.push({key:'',answers:{}});Array.from(str).forEach((ch,i)=>S.questions[i].key=ch==='-'?'':ch);store();refreshClass();renderScan();toast('Đã lưu '+str.length+' vị trí đáp án')};
+function summary(){const eligible=S.questions.filter(q=>q.key);return students().map(s=>{let correct=0,answered=0;const seq=S.questions.map(q=>{const a=q.answers[s.id]||'';if(a)answered++;if(q.key&&a===q.key)correct++;return a||''});return {id:s.id,name:s.name,absent:absent().has(s.id),answered,correct,score:absent().has(s.id)?'':(eligible.length?(10*correct/eligible.length).toFixed(2):''),answers:seq}})}
+function renderReport(){const data=summary(),graded=S.questions.filter(q=>q.key).length;$('r-total').textContent=max();$('r-count').textContent=S.questions.length;$('r-av').textContent=graded?(data.filter(r=>!r.absent).reduce((x,r)=>x+Number(r.score),0)/Math.max(1,data.filter(r=>!r.absent).length)).toFixed(2):'—';const cols=`<tr><th>Thẻ</th><th>Học sinh</th><th>Điểm danh</th><th>Đã trả lời</th><th>Đúng</th><th>Điểm / 10</th>${S.questions.map((q,i)=>`<th>C${i+1}${q.key?' ('+q.key+')':''}</th>`).join('')}</tr>`;$('report-table').innerHTML='<thead>'+cols+'</thead><tbody>'+data.map(r=>`<tr><td>${r.id}</td><td>${e(r.name)}</td><td>${r.absent?'Vắng':'Có mặt'}</td><td>${r.answered}/${S.questions.length}</td><td>${graded?r.correct+'/'+graded:'—'}</td><td><b>${r.score||'—'}</b></td>${r.answers.map(a=>`<td>${e(a||'—')}</td>`).join('')}</tr>`).join('')+'</tbody>'}
+$('refresh-report').onclick=renderReport;
+function csvDownload(rows,filename){const quote=x=>'"'+String(x??'').replace(/"/g,'""')+'"';let csv='\ufeff'+rows.map(row=>row.map(quote).join(',')).join('\r\n');download(new Blob([csv],{type:'text/csv;charset=utf-8'}),filename)}
+function download(data,filename){const url=URL.createObjectURL(data),a=document.createElement('a');a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000)}
+$('export-csv').onclick=()=>{const rows=[['STT','Họ và tên','Điểm danh','Số câu đã trả lời','Số câu đúng','Điểm trên 10',...S.questions.map((q,i)=>`Câu ${i+1} [đáp án ${q.key||'-'}]`)]];summary().forEach(x=>rows.push([x.id,x.name,x.absent?'Vắng':'Có mặt',x.answered,x.correct,x.score,...x.answers]));csvDownload(rows,'Bang_diem_'+new Date().toISOString().slice(0,10)+'.csv');toast('Đã xuất bảng tổng hợp')};
+$('export-detail').onclick=()=>{const rows=[['Lớp','Bài kiểm tra','Thẻ','Họ và tên','Điểm danh','Câu','Lựa chọn','Đáp án đúng','Kết quả']];students().forEach(s=>S.questions.forEach((q,i)=>{const a=q.answers[s.id]||'',k=q.key||'';rows.push([S.className,S.title,s.id,s.name,absent().has(s.id)?'Vắng':'Có mặt',i+1,a,k,k?(a===k?'Đúng':'Sai'):'Chưa chấm'])}));csvDownload(rows,'Chi_tiet_lua_chon.csv');toast('Đã xuất chi tiết')};
+function backup(){download(new Blob([JSON.stringify(S,null,2)],{type:'application/json'}),'Sao_luu_quet_the_'+new Date().toISOString().slice(0,10)+'.json');toast('Đã tạo bản sao lưu JSON')}
+$('download-json').onclick=backup;$('backup-top').onclick=backup;$('import-json').onclick=()=>$('json-upload').click();
+$('json-upload').onchange=async(ev)=>{const file=ev.target.files?.[0];if(!file)return;try{let v=JSON.parse(await file.text());if(!Array.isArray(v.questions)||!Number.isInteger(+v.total)||v.total<1||v.total>63)throw Error('Sai định dạng');if(!confirm('Khôi phục bản sao lưu sẽ thay toàn bộ dữ liệu hiện có. Tiếp tục?'))return;S=v;S.question=Math.max(1,Math.min(S.questions.length,S.question||1));S.names=Array.isArray(S.names)?S.names:[];S.absentIds=Array.isArray(S.absentIds)?[...new Set(S.absentIds.map(Number).filter(id=>Number.isInteger(id)&&id>=1&&id<=max()))]:[];groupHits.clear();store();refreshClass();renderScan();renderReport();toast('Đã khôi phục dữ liệu')}catch(err){toast('Không thể đọc tệp JSON: '+err.message)}finally{ev.target.value=''}};
+$('new-exam').onclick=()=>{if(!confirm('Tạo bài kiểm tra mới? Các lượt quét hiện có sẽ bị xóa. Hãy sao lưu trước.'))return;S.questions=Array.from({length:20},()=>({key:'',answers:{}}));S.question=1;S.title='Bài kiểm tra mới';groupHits.clear();store();renderScan();refreshClass();toast('Đã tạo bài mới')};
+// Marker orientation: QR version 1 (21x21). Three finder marks; the corner without a finder
+// indicates canonical bottom-right. Four visual corners in clockwise order: TL,TR,BR,BL.
+// Print labels on the card: A at top, B at right, C at bottom, D at left.
+// Missing corner screen position: BR=>A, BL=>D, TL=>C, TR=>B.
+function decodeOrientation(imageData,corners){
+  if(!corners||corners.length!==4)return null;
+  const data=imageData.data,w=imageData.width,h=imageData.height;
+  function lum(x,y){x=Math.round(x);y=Math.round(y);if(x<0||y<0||x>=w||y>=h)return 255;const n=4*(y*w+x);return (.2126*data[n]+.7152*data[n+1]+.0722*data[n+2]);}
+  // Normalize pixel brightness to account for classroom lighting.
+  // Estimate contrast from QR cells (works better in dim or uneven classroom lighting).
+  const p0=corners[0],p1=corners[1],p2=corners[2],p3=corners[3];
+  const levels=[];
+  for(let row=0;row<21;row++)for(let col=0;col<21;col++){
+    const a=(col+.5)/21,b=(row+.5)/21;
+    levels.push(lum((1-a)*(1-b)*p0.x+a*(1-b)*p1.x+a*b*p2.x+(1-a)*b*p3.x,
+                    (1-a)*(1-b)*p0.y+a*(1-b)*p1.y+a*b*p2.y+(1-a)*b*p3.y));
+  }
+  levels.sort((a,b)=>a-b);
+  const contrast=levels[374]-levels[66];
+  if(contrast<22)return null;
+  const threshold=(levels[66]+levels[374])/2;
+  let scores=[];
+  for(let corner=0;corner<4;corner++){
+    const p=corners[corner],u=corners[(corner+1)%4],v=corners[(corner+3)%4];
+    let sum=0;
+    for(let r=0;r<7;r++)for(let c=0;c<7;c++){
+      const a=(c+.5)/21,b=(r+.5)/21;
+      const x=p.x+a*(u.x-p.x)+b*(v.x-p.x),y=p.y+a*(u.y-p.y)+b*(v.y-p.y);
+      const black=(r===0||r===6||c===0||c===6||(r>=2&&r<=4&&c>=2&&c<=4));
+      const L=lum(x,y);
+      sum+=black ? (L<threshold?1:0) : (L>threshold?1:0);
+    }
+    scores.push(sum/49);
+  }
+  const min=Math.min(...scores),idx=scores.indexOf(min);
+  const good=scores.filter((_,i)=>i!==idx).every(score=>score>=.69);
+  const separation=Math.min(...scores.filter((_,i)=>i!==idx))-min;
+  if(!good||separation<.12)return null;
+  return {answer:['C','B','A','D'][idx],scores,quality:separation};
+}
+let stream=null,scanning=false,frameTimer=null,seen=new Map(),lastNew=0;
+const cv=$('detector-canvas'),ctx=cv.getContext('2d',{willReadFrequently:true}),overlay=$('overlay'),oc=overlay.getContext('2d');
+function status(text){$('scanner-status').textContent=text}
+function readyDecoder(){if(typeof jsQR!=='function')throw Error('Chưa tải thư viện đọc QR. Hãy kết nối Internet một lần, mở lại trang HTTPS này rồi cài vào Màn hình chính.');}
+// jsQR trả về 4 góc theo hướng nội tại của mã QR; không bị giới hạn bởi Safari BarcodeDetector.
+// Mép QR từ góc chuẩn TL -> TR: hướng phải = A, xuống = D, trái = C, lên = B.
+function choiceFromLocation(loc){
+  if(!loc?.topLeftCorner||!loc?.topRightCorner)return null;
+  const a=loc.topLeftCorner,b=loc.topRightCorner,dx=b.x-a.x,dy=b.y-a.y;
+  if(Math.hypot(dx,dy)<9)return null;
+  return Math.abs(dx)>Math.abs(dy)?(dx>=0?'A':'C'):(dy>=0?'D':'B');
+}
+function found(raw,answer){const m=/^LTHI:(\d{2})$/.exec(raw||'');if(!m||!answer)return null;const id=Number(m[1]);if(id<1||id>max())return null;return {id,answer}}
+async function startCamera(){
+ if(scanning)return;
+ try{
+  readyDecoder();
+  if(!navigator.mediaDevices?.getUserMedia)throw Error('Safari không cấp được camera. Hãy mở ứng dụng từ trang HTTPS hoặc biểu tượng trên Màn hình chính.');
+  stream=await navigator.mediaDevices.getUserMedia({audio:false,video:{facingMode:{ideal:'environment'},width:{ideal:1280},height:{ideal:720}}});
+  const video=$('camera-video');video.srcObject=stream;await video.play();scanning=true;seen.clear();
+  $('cam-placeholder').classList.add('hide');status('Camera iPhone đã bật. Lia chậm qua từng dãy bàn.');setTimeout(requestLoop,200);
+ }catch(err){stopCamera();status('⚠ '+err.message);toast('Không bật được camera: '+err.message)}
+}
+function stopCamera(){scanning=false;if(frameTimer)clearTimeout(frameTimer);frameTimer=null;if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}$('camera-video').srcObject=null;$('cam-placeholder').classList.remove('hide');oc.clearRect(0,0,overlay.width,overlay.height)}
+$('btnstart').onclick=startCamera;$('btnstop').onclick=()=>{stopCamera();status('Đã dừng quét.')};
+const fragmentCanv=document.createElement('canvas');const fragmentContext=fragmentCanv.getContext('2d',{willReadFrequently:true});
+function decodeMany(imageSource,W,H,photo=false){
+  // Chia ảnh thành 4 vùng lớn có chồng lấn để tìm NHIỀU thẻ trong một khung hình.
+  // Mỗi lần nhận QR trong vùng, xóa vùng QR đó và đọc tiếp tối đa 3 mã/vùng.
+  const grid=[{x:0,y:0,w:.62,h:.62},{x:.38,y:0,w:.62,h:.62},{x:0,y:.38,w:.62,h:.62},{x:.38,y:.38,w:.62,h:.62}];
+  const hits=new Map();
+  const more=photo?4:2;
+  for(const tile of grid){
+    const x=Math.round(tile.x*W),y=Math.round(tile.y*H),w=Math.min(Math.round(tile.w*W),W-x),h=Math.min(Math.round(tile.h*H),H-y);
+    fragmentCanv.width=w;fragmentCanv.height=h;fragmentContext.drawImage(imageSource,x,y,w,h,0,0,w,h);
+    for(let repeat=0;repeat<more;repeat++){
+      const data=fragmentContext.getImageData(0,0,w,h);
+      let code=null;
+      try{code=jsQR(data.data,w,h,{inversionAttempts:'dontInvert'})}catch(e){break}
+      if(!code)break;
+      const answer=choiceFromLocation(code.location),item=found(code.data,answer);
+      if(item)hits.set(item.id,item);
+      const loc=code.location;
+      if(!loc?.topLeftCorner||!loc?.topRightCorner||!loc?.bottomRightCorner||!loc?.bottomLeftCorner)break;
+      // Che vùng mã vừa được nhận diện để tiếp tục tìm thẻ khác trong cùng vùng.
+      const xs=[loc.topLeftCorner.x,loc.topRightCorner.x,loc.bottomRightCorner.x,loc.bottomLeftCorner.x],ys=[loc.topLeftCorner.y,loc.topRightCorner.y,loc.bottomRightCorner.y,loc.bottomLeftCorner.y];
+      const left=Math.max(0,Math.floor(Math.min(...xs)-12)),top=Math.max(0,Math.floor(Math.min(...ys)-12));
+      fragmentContext.fillStyle='white';fragmentContext.fillRect(left,top,Math.min(w-left,Math.ceil(Math.max(...xs)-left+12)),Math.min(h-top,Math.ceil(Math.max(...ys)-top+12)));
+    }
+  }
+  return [...hits.values()]
+}
+function accept(hits,isPhoto){const now=Date.now();let n=0;
+ for(const hit of hits){
+  if(isPhoto){if(record(hit.id,hit.answer))n++;continue}
+  const old=seen.get(hit.id);
+  if(old&&old.answer===hit.answer&&now-old.time<3500){old.hits++;old.time=now}
+  else seen.set(hit.id,{answer:hit.answer,hits:1,time:now});
+  if(seen.get(hit.id).hits>=2&&record(hit.id,hit.answer))n++;
+ }
+ for(const [id,v] of seen){if(now-v.time>4000)seen.delete(id)}
+ return n
+}
+async function requestLoop(){
+ if(!scanning)return;
+ try{
+  const video=$('camera-video');
+  if(video.readyState>=2){
+    const W=Math.min(960,video.videoWidth||960),H=Math.round(W*(video.videoHeight||720)/(video.videoWidth||960));
+    cv.width=W;cv.height=H;ctx.drawImage(video,0,0,W,H);
+    const hits=decodeMany(cv,W,H,false),n=accept(hits,false);
+    if(n>0){lastNew=Date.now();status(`Vừa ghi thêm ${n} mã học sinh; lượt này ${groupHits.size} mã, câu ${S.question} đã ghi ${presentAnswerCount()}/${expected()}.`)}
+  }
+ }catch(err){status('Đang xử lý camera: '+err.message)}
+ if(scanning)frameTimer=setTimeout(requestLoop,260)
+}
+$('btnphoto').onclick=()=>$('image-upload').click();
+$('image-upload').onchange=async ev=>{
+ const file=ev.target.files?.[0];if(!file)return;
+ try{
+  readyDecoder();const bitmap=await createImageBitmap(file);let W=Math.min(2400,bitmap.width),H=Math.round(W*bitmap.height/bitmap.width);
+  cv.width=W;cv.height=H;ctx.drawImage(bitmap,0,0,W,H);
+  const hits=decodeMany(cv,W,H,true),n=accept(hits,true);
+  status(`Ảnh vừa đọc được ${hits.length} thẻ, ghi mới ${n} thẻ. Chưa ghi ${Math.max(0,expected()-presentAnswerCount())} mã có mặt.`);
+  toast(`Đã ghi ${n} thẻ mới từ ảnh; tổng nhận diện ${hits.length} thẻ`);bitmap.close?.();
+ }catch(err){toast('Không quét được ảnh: '+err.message)}finally{ev.target.value=''}
+};
+$('check-offline').onclick=async()=>{
+ const out=$('offline-check-result');
+ try{
+  const cache=await caches.open('qr48-iphone-v3-01');
+  const web=await cache.match('./index.html');
+  const js=await cache.match('https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js');
+  out.textContent=web&&js&&typeof jsQR==='function'?'✓ Đã lưu giao diện và thư viện quét QR. Hãy bật Chế độ máy bay để thử trực tiếp.':'⚠ Chưa lưu đủ. Cần mở từ trang HTTPS có Internet và chờ hoàn tất.';
+ }catch(err){out.textContent='⚠ Chưa thể kiểm tra. Cần mở trang HTTPS và cài ứng dụng vào Màn hình chính.'}
+};
+renderScan();refreshClass();
+window.QR48_TEST=window.QR45_TEST={decodeOrientation,choiceFromLocation,record,summary,getState:()=>S,reset:()=>{S=fresh();store();renderScan();refreshClass()}};
+</script>
+<script>
+if('serviceWorker' in navigator && location.protocol==='https:'){
+ navigator.serviceWorker.register('./sw.js').catch(e=>console.warn('Không cài được offline cache',e));
+}
+</script>
+</body></html>
