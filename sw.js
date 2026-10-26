@@ -1,18 +1,24 @@
-const CACHE='qr48-iphone-v3-01';
-const EXT='https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js';
+const CACHE='qr-iphone-v4-01';
+const EXTRA=[
+ 'https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js',
+ 'https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js'
+];
 const LOCAL=['./','./index.html','./manifest.webmanifest','./icon.png'];
-self.addEventListener('install',ev=>{ev.waitUntil((async()=>{
+self.addEventListener('install',event=>event.waitUntil((async()=>{
  const c=await caches.open(CACHE);await c.addAll(LOCAL);
- // Lưu bản jsQR tải về ở lần thiết lập ban đầu, để dùng trên lớp khi không có mạng.
- try{const r=await fetch(EXT,{mode:'no-cors'});await c.put(EXT,r)}catch(e){}
+ for(const url of EXTRA){try{const r=await fetch(url,{mode:'no-cors'});await c.put(url,r)}catch(e){console.warn('Không tải ngoại tuyến',url,e)}}
  await self.skipWaiting();
-})())});
-self.addEventListener('activate',ev=>{ev.waitUntil((async()=>{for(const k of await caches.keys())if(k!==CACHE)await caches.delete(k);await self.clients.claim()})())});
-self.addEventListener('fetch',ev=>{const url=new URL(ev.request.url);
- if(ev.request.method!=='GET')return;
- if(url.origin===self.location.origin || url.href===EXT){ev.respondWith((async()=>{
-  const cached=await caches.match(ev.request);if(cached)return cached;
-  try{const r=await fetch(ev.request);const c=await caches.open(CACHE);await c.put(ev.request,r.clone());return r}
-  catch(e){return new Response('Ngoại tuyến: tài nguyên chưa được tải trước',{status:503})}
- })())}
+})()));
+self.addEventListener('activate',event=>event.waitUntil((async()=>{
+ for(const k of await caches.keys())if(k.startsWith('qr')&&k!==CACHE)await caches.delete(k);
+ await self.clients.claim();
+})()));
+self.addEventListener('fetch',event=>{
+ if(event.request.method!=='GET')return;
+ const u=new URL(event.request.url);
+ if(u.origin===self.location.origin||EXTRA.includes(u.href))event.respondWith((async()=>{
+  const hit=await caches.match(event.request);if(hit)return hit;
+  try{const response=await fetch(event.request);const c=await caches.open(CACHE);await c.put(event.request,response.clone());return response}
+  catch(e){return new Response('Ứng dụng ngoại tuyến: thiếu tệp đã lưu',{status:503})}
+ })());
 });
