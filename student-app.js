@@ -2,6 +2,31 @@
 'use strict';
 const $=id=>document.getElementById(id), msg=t=>{const m=$('message');m.textContent=t;m.style.display='block';clearTimeout(msg.timer);msg.timer=setTimeout(()=>m.style.display='none',3600)};
 let session=null,studentRecord=null,group=new Map(),studentCam=null,groupCam=null,groupTimer=null,studentTimer=null,examTicker=null,lastPerf=performance.now(),lastWall=Date.now();
+let sessionFromQR=false,scanClock=null,prestartTicker=null;
+const CLOCK_PREFIX='qr_scan_clock_v62_';
+function startScanClock(v){
+ const key=CLOCK_PREFIX+v.token;
+ let saved=null;try{saved=JSON.parse(localStorage.getItem(key)||'null')}catch(e){}
+ // Một QR đã quét không được khởi động lại đồng hồ khi quét lần thứ hai hoặc tải lại trang.
+ if(!saved||saved.n!==v.n||saved.duration!==v.duration){
+  const now=Date.now();saved={n:v.n,duration:v.duration,startAt:now,dueAt:v.duration?now+v.duration*60000:0};
+  localStorage.setItem(key,JSON.stringify(saved));
+ }
+ scanClock=saved;
+ clearInterval(prestartTicker);prestartTicker=setInterval(updateScanClockPreview,500);
+ updateScanClockPreview();
+ return saved;
+}
+function updateScanClockPreview(){
+ if(!sessionFromQR||!session||!scanClock)return;
+ const panel=$('prestart-clock');panel.classList.remove('hide');
+ $('prestart-exam').textContent=`${session.className||'Lớp'} · ${session.examName||'Đề kiểm tra'} · ${session.n} câu · ${session.duration?session.duration+' phút':'Không giới hạn'}`;
+ const rem=scanClock.dueAt?Math.max(0,Math.ceil((scanClock.dueAt-Date.now())/1000)):0;
+ $('prestart-left').textContent=scanClock.dueAt?`${String(Math.floor(rem/60)).padStart(2,'0')}:${String(rem%60).padStart(2,'0')}`:'Không giới hạn';
+ $('prestart-note').textContent=scanClock.dueAt&&rem===0?'ĐÃ HẾT GIỜ. Nhập mã thẻ để nhận QR nộp bài, không thể làm thêm.':'Thời gian tính từ khi quét QR thành công, không bắt đầu lại khi mở ứng dụng.';
+ if(scanClock.dueAt&&rem===0)panel.style.borderColor='#b42335';
+}
+
 const KEY='qr_students_v6';
 function loadState(){try{return JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){return {}}}
 function storageKey(){return session?session.token+'_'+Number(studentRecord?.id||$('s-id').value):''}
@@ -13,10 +38,21 @@ function groupMax(){return !session?8:session.n<=40?8:session.n<=80?6:4}
 function groupStatus(){groupPersist();const a=group.size,n=session?.n||0;$('group-session-status').textContent=session?`Phiên ${session.token} · ${session.className} · ${session.examName} · ${n} câu`:'Hãy nhận đề trong tab Làm bài trước';$('group-msg').textContent=`Đã nhận ${a} / ${groupMax()} bài thuộc cùng phiên kiểm tra.`;$('group-list').innerHTML=[...group.values()].sort((a,b)=>a.id-b.id).map(x=>`<tr><td>${String(x.id).padStart(2,'0')}</td><td>${x.answers.filter(Boolean).length}/${x.n}</td><td><button data-remove="${x.id}">Bỏ</button></td></tr>`).join('')||'<tr><td colspan="3">Chưa nhận bài</td></tr>';$('group-list').querySelectorAll('[data-remove]').forEach(el=>el.onclick=()=>{group.delete(+el.dataset.remove);groupStatus()})}
 function showTab(tab){if(studentRecord&&!studentRecord.finalizedAt&&tab!=='student'){msg('Phiếu đang làm: không chuyển sang các chức năng khác trước khi nộp.');return}document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('sel',b.dataset.view===tab));for(const id of ['student','collector','help'])$('view-'+id).classList.toggle('hide',id!==tab);if(tab!=='student')stopStudentCam();if(tab!=='collector')stopGroupCam();groupStatus()}
 document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>showTab(b.dataset.view));
-function adoptSession(v){if(session?.token!==v.token){studentRecord=null;group.clear();$('answer-card').classList.add('hide');$('submit-card').classList.add('hide');$('group-output').classList.add('hide')}session=v;groupRestore();$('s-token').value=v.token;$('s-count').value=v.n;$('s-class').value=v.className||'';$('s-exam').value=v.examName||'';$('s-duration').value=v.duration??0;$('s-policy').value=v.policy||'warn';$('session-info').textContent=`Đã nhận ${v.className||'lớp học'} · ${v.examName||'đề'} · ${v.n} câu · ${v.duration?`${v.duration} phút`:'Không giới hạn'} · ${v.policy==='strict'?'Khóa nếu rời màn hình 1 lần':'Cảnh báo 1 lần, khóa lần 2'} · mã phiên ${v.token}`;groupStatus();msg('Đã nhận thông tin phiên kiểm tra')}
+function adoptSession(v,fromQR=false){if(session?.token!==v.token){studentRecord=null;group.clear();$('answer-card').classList.add('hide');$('submit-card').classList.add('hide');$('group-output').classList.add('hide')}session=v;if(fromQR){sessionFromQR=true;startScanClock(v);$('manual-session').open=false}else if(!sessionFromQR){$('prestart-clock').classList.add('hide')}
+ groupRestore();$('s-token').value=v.token;$('s-count').value=v.n;$('s-class').value=v.className||'';$('s-exam').value=v.examName||'';$('s-duration').value=v.duration??0;$('s-policy').value=v.policy||'warn';$('session-info').textContent=`Đã nhận ${v.className||'lớp học'} · ${v.examName||'đề'} · ${v.n} câu · ${v.duration?`${v.duration} phút`:'Không giới hạn'} · ${v.policy==='strict'?'Khóa nếu rời màn hình 1 lần':'Cảnh báo 1 lần, khóa lần 2'} · mã phiên ${v.token}`;groupStatus();msg(fromQR?'Đã nhận QR: đồng hồ đang đếm ngược.':'Đã nhận thông tin phiên kiểm tra')}
 function manualSession(){const t=$('s-token').value.trim().toUpperCase(),n=+$('s-count').value;return QRWire.parseSession(QRWire.session(t,n,$('s-class').value,$('s-exam').value,+$('s-duration').value,$('s-policy').value))}
-function begin(){if(studentRecord&&!studentRecord.finalizedAt&&($('s-token').value.trim().toUpperCase()!==studentRecord.token||Number($('s-id').value)!==studentRecord.id)){msg('Không thể đổi mã học sinh hoặc phiên khi đang làm bài');return}let v;try{v=manualSession()}catch(e){msg(e.message);return}adoptSession(v);const id=+$('s-id').value;if(!Number.isInteger(id)||id<1||id>63)return msg('Mã thẻ phải từ 1 đến 63');const saved=loadState()[v.token+'_'+id];if(saved?.startAt){session=saved.session||v;studentRecord={id,n:session.n,token:session.token,answers:saved.answers?.length===session.n?saved.answers:Array(session.n).fill(''),startAt:saved.startAt,dueAt:saved.dueAt||0,finalizedAt:saved.finalizedAt||null,lockReason:saved.lockReason||'',awayCount:saved.awayCount||0,lastHiddenAt:saved.lastHiddenAt||0,lastSeenAt:saved.lastSeenAt||Date.now()};adoptSession(session)}else{const now=Date.now();studentRecord={id,n:v.n,token:v.token,answers:Array(v.n).fill(''),startAt:now,dueAt:v.duration?now+v.duration*60000:0,finalizedAt:null,lockReason:'',awayCount:0,lastHiddenAt:0,lastSeenAt:now}}
- $('answer-card').classList.remove('hide');if(!studentRecord.finalizedAt)$('submit-card').classList.add('hide');saveLocal();renderAnswers();runClock();}
+function begin(){if(studentRecord&&!studentRecord.finalizedAt&&($('s-token').value.trim().toUpperCase()!==studentRecord.token||Number($('s-id').value)!==studentRecord.id)){msg('Không thể đổi mã học sinh hoặc phiên khi đang làm bài');return}
+ let v;try{v=sessionFromQR&&session?session:manualSession()}catch(e){msg(e.message);return}adoptSession(v);
+ const id=+$('s-id').value;if(!Number.isInteger(id)||id<1||id>63)return msg('Mã thẻ phải từ 1 đến 63');
+ const saved=loadState()[v.token+'_'+id];
+ if(saved?.startAt){session=saved.session||v;studentRecord={id,n:session.n,token:session.token,answers:saved.answers?.length===session.n?saved.answers:Array(session.n).fill(''),startAt:saved.startAt,dueAt:saved.dueAt||0,finalizedAt:saved.finalizedAt||null,lockReason:saved.lockReason||'',awayCount:saved.awayCount||0,lastHiddenAt:saved.lastHiddenAt||0,lastSeenAt:saved.lastSeenAt||Date.now()};adoptSession(session);
+  if(scanClock?.dueAt&&(!studentRecord.dueAt||scanClock.dueAt<studentRecord.dueAt))studentRecord.dueAt=scanClock.dueAt;
+ }else{const now=Date.now(),started=sessionFromQR&&scanClock?scanClock.startAt:now,deadline=sessionFromQR&&scanClock?scanClock.dueAt:(v.duration?now+v.duration*60000:0);
+  studentRecord={id,n:v.n,token:v.token,answers:Array(v.n).fill(''),startAt:started,dueAt:deadline,finalizedAt:null,lockReason:'',awayCount:0,lastHiddenAt:0,lastSeenAt:now}}
+ localStorage.setItem('qr_last_student_id_v62',String(id));
+ $('answer-card').classList.remove('hide');if(!studentRecord.finalizedAt)$('submit-card').classList.add('hide');
+ saveLocal();checkDeadline();renderAnswers();runClock();if(studentRecord.finalizedAt)qrFromRecord();
+}
 $('begin').onclick=begin;
 function renderAnswers(){if(!studentRecord)return;const r=studentRecord,locked=!!r.finalizedAt,num=r.answers.filter(Boolean).length;$('progress').textContent=`Mã thẻ ${String(r.id).padStart(2,'0')} · Đã trả lời ${num}/${r.n} câu · ${locked?'ĐÃ KHÓA':'Tự lưu trên máy'}`;$('question-grid').innerHTML=Array.from({length:r.n},(_,i)=>`<div class="question ${r.answers[i]?'':'missing'}"><strong>Câu ${i+1}</strong><div class="options">${['A','B','C','D'].map(a=>`<button data-q="${i}" data-a="${a}" class="${r.answers[i]===a?'chosen':''}" ${locked?'disabled':''}>${a}</button>`).join('')}</div></div>`).join('');$('question-grid').querySelectorAll('[data-q]').forEach(el=>el.onclick=()=>{if(r.finalizedAt)return;if(checkDeadline())return;r.answers[+el.dataset.q]=el.dataset.a;saveLocal();renderAnswers()});$('finish').disabled=locked;$('clear-answers').disabled=locked;updateTimer()}
 function qrFromRecord(){if(!studentRecord||!studentRecord.finalizedAt)return;try{const r=studentRecord,raw=QRWire.student(r.token,r.n,r.id,r.answers,r);QRGen.render(raw,$('single-qr'),390);$('submit-status').textContent=`Mã thẻ ${String(r.id).padStart(2,'0')} · ${r.answers.filter(Boolean).length}/${r.n} đáp án · ${r.lockReason==='time'?'Hết giờ':r.lockReason==='focus'?'Khóa do rời màn hình':'Đã nộp trước giờ'} · ${r.awayCount} lượt trang bị ẩn · phiên ${r.token}`;$('submit-card').classList.remove('hide')}catch(e){msg('Không tạo được QR: '+e.message)}}
@@ -44,7 +80,9 @@ async function camera(video){if(!navigator.mediaDevices?.getUserMedia)throw Erro
 function stopStudentCam(){clearTimeout(studentTimer);if(studentCam){studentCam.getTracks().forEach(t=>t.stop());studentCam=null}$('cam-panel').classList.add('hide')}
 function stopGroupCam(){clearTimeout(groupTimer);if(groupCam){groupCam.getTracks().forEach(t=>t.stop());groupCam=null}$('group-video').classList.add('hide')}
 $('close-camera').onclick=stopStudentCam;$('group-stop').onclick=stopGroupCam;
-$('scan-session').onclick=async()=>{stopStudentCam();try{studentCam=await camera($('video'));$('cam-panel').classList.remove('hide');async function tick(){if(!studentCam)return;try{const raw=decodeFrame($('video'));if((raw?.startsWith('EX6|')||raw?.startsWith('EX7|'))){adoptSession(QRWire.parseSession(raw));stopStudentCam();return}}catch(e){msg(e.message);stopStudentCam();return}studentTimer=setTimeout(tick,260)}tick()}catch(e){msg(e.message)}};
+function handleScannedSession(raw){const v=QRWire.parseSession(raw);if(studentRecord&&!studentRecord.finalizedAt&&studentRecord.token!==v.token){stopStudentCam();msg('Đang làm bài ở phiên khác: không thể đổi mã đề khi bài chưa khóa.');return}adoptSession(v,true);stopStudentCam();if(Number.isInteger(+$('s-id').value)&&+$('s-id').value>=1&&+$('s-id').value<=63){begin();$('answer-card').scrollIntoView({behavior:'smooth',block:'start'})}else{msg('Đồng hồ đã chạy. Nhập mã học sinh rồi nhấn “Vào phiếu trả lời”.')}}
+$('scan-session').onclick=async()=>{stopStudentCam();try{studentCam=await camera($('video'));$('cam-panel').classList.remove('hide');async function tick(){if(!studentCam)return;try{const raw=decodeFrame($('video'));if((raw?.startsWith('EX6|')||raw?.startsWith('EX7|'))){handleScannedSession(raw);return}}catch(e){msg(e.message);stopStudentCam();return}studentTimer=setTimeout(tick,260)}tick()}catch(e){msg(e.message)}};
 $('group-scan').onclick=async()=>{stopGroupCam();if(!session)return msg('Cần quét QR bắt đầu đề trước');try{groupCam=await camera($('group-video'));$('group-video').classList.remove('hide');let previous='',last=0;async function tick(){if(!groupCam)return;try{const raw=decodeFrame($('group-video'));if((raw?.startsWith('S6|')||raw?.startsWith('S7|'))&&(raw!==previous||Date.now()-last>5000)){previous=raw;last=Date.now();addEntry(QRWire.parseStudent(raw))}}catch(e){msg(e.message)}groupTimer=setTimeout(tick,300)}tick()}catch(e){msg(e.message)}};
 $('group-photo').onclick=()=>$('group-photo-file').click();$('group-photo-file').onchange=async ev=>{const f=ev.target.files?.[0];if(!f)return;try{const bm=await createImageBitmap(f),c=document.createElement('canvas');const w=Math.min(1800,bm.width);c.width=w;c.height=Math.floor(w*bm.height/bm.width);c.getContext('2d').drawImage(bm,0,0,c.width,c.height);const raw=decodeCanvas(c);if(!raw)throw Error('Không đọc được QR trong ảnh');addEntry(QRWire.parseStudent(raw));bm.close?.()}catch(e){msg(e.message)}ev.target.value=''};
-window.QR_STUDENT_TEST={adoptSession,addEntry,getGroup:()=>[...group.values()],setId:id=>$('s-id').value=id};
+window.QR_STUDENT_TEST={adoptSession,handleScannedSession,begin,addEntry,getGroup:()=>[...group.values()],getRecord:()=>studentRecord,getClock:()=>scanClock,setId:id=>$('s-id').value=id};
+try{const previous=localStorage.getItem('qr_last_student_id_v62');if(previous&&/^([1-9]|[1-5][0-9]|6[0-3])$/.test(previous))$('s-id').value=previous}catch(e){}

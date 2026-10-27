@@ -1,4 +1,4 @@
-const CACHE='qr-iphone-v61-timer-focus-01';
+const CACHE='qr-iphone-v62-scan-timer-01';
 const EXTRA=[
  'https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js',
  'https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js'
