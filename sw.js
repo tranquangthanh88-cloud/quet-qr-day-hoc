@@ -1,4 +1,4 @@
-const CACHE='qr-iphone-v52-12-01';
+const CACHE='qr-iphone-v53-unified-01';
 const EXTRA=[
  'https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js',
  'https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js'

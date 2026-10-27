@@ -1,1 +1,16 @@
-{"name": "Quét thẻ lớp học V5 - Đồng bộ", "short_name": "Quét thẻ V5", "start_url": "./index.html", "scope": "./", "display": "standalone", "background_color": "#f2f6fa", "theme_color": "#123b63", "icons": [{"src": "./icon.png", "type": "image/png", "sizes": "192x192"}]}
+{
+  "name": "Quét thẻ lớp học V5.3 – Quét 12 thẻ, quản lý, đồng bộ",
+  "short_name": "Quét thẻ V5.3",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f2f6fa",
+  "theme_color": "#123b63",
+  "icons": [
+    {
+      "src": "./icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
+}
