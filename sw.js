@@ -1,9 +1,9 @@
-const CACHE='qr-iphone-v53-unified-01';
+const CACHE='qr-iphone-v60-two-modes-01';
 const EXTRA=[
  'https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js',
  'https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js'
 ];
-const LOCAL=['./','./index.html','./manifest.webmanifest','./icon.png','./cloud-sync.js','./firebase-config.js'];
+const LOCAL=['./','./index.html','./manifest.webmanifest','./icon.png','./cloud-sync.js','./firebase-config.js','./hoc-sinh.html','./manifest-hoc-sinh.webmanifest','./qr-wire.js','./qrgen.js','./student-app.js','./teacher-group.js'];
 self.addEventListener('install',event=>event.waitUntil((async()=>{
  const c=await caches.open(CACHE);await c.addAll(LOCAL);
  for(const url of EXTRA){try{const r=await fetch(url,{mode:'no-cors'});await c.put(url,r)}catch(e){console.warn('Không tải ngoại tuyến',url,e)}}

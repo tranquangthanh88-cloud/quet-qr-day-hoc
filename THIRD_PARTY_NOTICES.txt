@@ -1,0 +1,2 @@
+QRCode for JavaScript, Copyright (c) 2009 Kazuhiko Arase; MIT License. Source distributed with npm package qrcode-terminal. See https://www.opensource.org/licenses/mit-license.php
+jsQR 1.4.0, Apache-2.0, served from jsDelivr as in V5.3.

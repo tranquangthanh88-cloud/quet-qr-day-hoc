@@ -1,0 +1,17 @@
+{
+  "name": "Phiếu trả lời QR V6 – Học sinh",
+  "short_name": "HS Phiếu QR",
+  "start_url": "./hoc-sinh.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f2f6fa",
+  "theme_color": "#123b63",
+  "icons": [
+    {
+      "src": "./icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "id": "./hoc-sinh.html"
+}

@@ -1,6 +1,6 @@
 {
-  "name": "Quét thẻ lớp học V5.3 – Quét 12 thẻ, quản lý, đồng bộ",
-  "short_name": "Quét thẻ V5.3",
+  "name": "Quét thẻ V6 – Giáo viên",
+  "short_name": "GV Quét QR V6",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -12,5 +12,6 @@
       "type": "image/png",
       "sizes": "192x192"
     }
-  ]
+  ],
+  "id": "./index.html"
 }
