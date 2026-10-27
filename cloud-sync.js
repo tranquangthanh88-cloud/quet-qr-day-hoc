@@ -117,4 +117,4 @@ wire('share-unpublish',async()=>{if(!user)throw Error('Chưa đăng nhập');con
 });
 // Startup and optional trusted offline profile.
 offlineChoice();
-try{const c=configFromStorage();if(c){$('cloud-config').value=JSON.stringify(c,null,2);$('v7-config').value=JSON.stringify(c,null,2);connect(c).catch(()=>{})}else gate('Cần cấu hình Firebase một lần để đăng ký và đăng nhập. Mở mục Cài đặt bên dưới.')}catch(e){gate('Cấu hình Firebase không hợp lệ: '+e.message,true)}
+try{const c=configFromStorage();if(c){$('cloud-config').value=JSON.stringify(c,null,2);$('v7-config').value=JSON.stringify(c,null,2);connect(c).catch(()=>{})}else gate('Ứng dụng chưa được kết nối Firebase. Vui lòng liên hệ quản trị viên để thiết lập.',true)}catch(e){gate('Cấu hình Firebase không hợp lệ: '+e.message,true)}
