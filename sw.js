@@ -1,4 +1,4 @@
-const CACHE='qr-iphone-v5-sync-01';
+const CACHE='qr-iphone-v52-12-01';
 const EXTRA=[
  'https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js',
  'https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js'
@@ -17,8 +17,9 @@ self.addEventListener('fetch',event=>{
  if(event.request.method!=='GET')return;
  const u=new URL(event.request.url);
  if(u.origin===self.location.origin||EXTRA.includes(u.href))event.respondWith((async()=>{
-  const hit=await caches.match(event.request);if(hit)return hit;
-  try{const response=await fetch(event.request);const c=await caches.open(CACHE);await c.put(event.request,response.clone());return response}
-  catch(e){return new Response('Ứng dụng ngoại tuyến: thiếu tệp đã lưu',{status:503})}
+  const hit=await caches.match(event.request);
+  if(u.origin!==self.location.origin&&hit)return hit;
+  try{const response=await fetch(event.request);if(response.ok){const c=await caches.open(CACHE);await c.put(event.request,response.clone());}return response}
+  catch(e){return hit||new Response('Ứng dụng ngoại tuyến: thiếu tệp đã lưu',{status:503})}
  })());
 });

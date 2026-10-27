@@ -1,10 +1,19 @@
 <!doctype html>
-<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#123b63"><title>Quét thẻ lớp học V5 · Đồng bộ máy tính và iPhone</title><style>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#123b63"><title>Quét thẻ lớp học V5.2 · Chế độ 12 thẻ · Đồng bộ</title><style>
 :root{font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif;color:#16263c;background:#f2f6fa;font-size:15px}*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer;border:1px solid #cdd9e3;background:#fff;border-radius:10px;padding:10px 13px;color:#1c3551}button:disabled{opacity:.55}button.primary{background:#1764b5;color:white;border-color:#1764b5}button.success{background:#116c4d;color:#fff;border-color:#116c4d}button.danger{color:#a3233a;border-color:#e9bac4}button:active{transform:translateY(1px)}header{position:sticky;top:0;z-index:12;background:#123b63;color:white;padding:12px 15px;display:flex;gap:12px;align-items:center;justify-content:space-between}header small{display:block;color:#bed6ed;font-size:.78rem}header strong{font-size:1.05rem}header button{background:#285779;border-color:#537b9b;color:white;padding:7px 10px}.nav{display:grid;grid-template-columns:repeat(6,1fr);background:white;position:sticky;top:60px;z-index:11;box-shadow:0 1px 4px #0c29451c}.nav button{border:0;border-radius:0;padding:12px 4px;font-size:.88rem}.nav button.active{color:#1261ae;border-bottom:3px solid #1261ae;background:#f0f7ff;font-weight:700}main{max-width:1000px;margin:auto;padding:14px 12px 52px}.page{display:none}.page.active{display:block}.card{background:white;border:1px solid #e0e8f0;border-radius:16px;padding:16px;margin-bottom:14px;box-shadow:0 3px 10px #18355208}.card h2{margin:0 0 10px;font-size:1.13rem}.card h3{margin:5px 0 10px;font-size:1rem}.muted{color:#61758b;font-size:.89rem;line-height:1.5}.control{display:flex;align-items:center;flex-wrap:wrap;gap:8px}.control>*{flex-shrink:0}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.row4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}label{font-size:.91rem;font-weight:650;display:block;margin:8px 0 5px}input,select,textarea{max-width:100%;width:100%;border:1px solid #bdcedf;border-radius:9px;padding:10px;background:#fff;color:#20344d}textarea{min-height:100px;resize:vertical}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}.stat{text-align:center;background:#f0f5fa;border-radius:11px;padding:11px 2px}.stat b{font-size:1.55rem;display:block;color:#123f69}.stat span{font-size:.81rem;color:#637c93}.tag{display:inline-block;background:#e8f4ec;color:#116942;font-size:.82rem;border-radius:20px;padding:4px 9px}.warn{background:#fff6e2;border-left:4px solid #e6a62b;padding:10px 12px;border-radius:5px;color:#73520c}.ok{background:#e8f7ee;border-left:4px solid #24a164;padding:10px 12px;color:#1d6445;border-radius:5px}.camera{width:100%;position:relative;background:#061726;border-radius:12px;overflow:hidden;aspect-ratio:4/3;min-height:210px;max-height:540px}.camera video{width:100%;height:100%;position:absolute;inset:0;object-fit:contain}.camera canvas.overlay{width:100%;height:100%;position:absolute;inset:0;pointer-events:none}.cam-placeholder{color:#d7e7f4;position:absolute;top:43%;width:100%;text-align:center;font-size:1rem}.scanlines{display:flex;gap:7px;flex-wrap:wrap}.choice{font-size:1.1rem;font-weight:700;border:1px solid #b9ccd9;border-radius:10px;padding:8px 12px;display:inline-block}.choice.A{background:#e7f2ff;color:#1d65ae}.choice.B{background:#e2f5eb;color:#176c4c}.choice.C{background:#fff3dc;color:#905e10}.choice.D{background:#f7eafa;color:#82409c}.qnum{font-weight:800;color:#0b548f;font-size:1.7rem}.list-scan{display:flex;gap:6px;flex-wrap:wrap;max-height:240px;overflow:auto}.chip{padding:5px 8px;border-radius:8px;background:#e8f0f8;font-size:.85rem;white-space:nowrap}.chip.missing{background:#fff0ec;color:#a34431}.chip.hit{background:#e7f7ee;color:#116c4d}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th,td{border-bottom:1px solid #e3eaf1;text-align:left;padding:9px 8px}th{background:#f3f7fa;color:#436079;font-size:.87rem}td input{padding:5px 7px;width:180px;min-width:180px}.ansbtn{padding:6px 10px;margin:2px;min-width:40px}.ansbtn.selected{background:#1764b5;color:#fff}.keyinput{width:68px!important;min-width:68px!important}a{color:#1764b5}.pills{display:flex;gap:8px;flex-wrap:wrap}.pills .p{padding:7px 9px;background:#eff5fb;border-radius:8px;color:#345f80;font-size:.87rem}#messages{position:fixed;bottom:15px;left:12px;right:12px;z-index:100;pointer-events:none;display:flex;flex-direction:column;gap:5px}#messages div{background:#133951;color:white;padding:12px 16px;border-radius:10px;box-shadow:0 6px 20px #142c4666}.small{font-size:.82rem}.hide{display:none!important}.box-margin{margin-top:12px}@media(max-width:540px){.row{grid-template-columns:1fr}.card{padding:13px}.control button{flex:1}.nav button{font-size:.83rem}.stats{gap:5px}main{padding:10px 9px 50px}header{padding:10px}#btnstop{min-width:90px}.camera{aspect-ratio:3/4}}@media print{header,.nav,.noprint,button{display:none!important}main{padding:0}.page{display:block!important}.card{box-shadow:none}}
 
 :root{--blue:#175b9c;--soft:#edf5fc;--line:#dce6ef}header{min-height:60px}.nav{grid-template-columns:repeat(6,1fr)}.nav button{font-size:.86rem}.wide{width:100%}.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.statwide{background:#eff7ff;border:1px solid #dbeaf9;border-radius:13px;padding:13px}.statwide strong{display:block;color:#154c80;font-size:1.25rem}.sectiontitle{font-weight:750;color:#1b466a;font-size:1.1rem;margin:6px 0 12px}.splitbar{display:grid;grid-template-columns:65px 1fr 40px;gap:7px;align-items:center;margin:5px 0}.progress{height:13px;border-radius:7px;background:#e8edf3;overflow:hidden}.progress>i{height:100%;display:block;border-radius:7px;background:#347eb5;transition:width .15s}.progress.B>i{background:#269876}.progress.C>i{background:#d68d30}.progress.D>i{background:#8b73ce}.qstats{border:1px solid #e0e8f1;border-radius:12px;padding:13px;margin:10px 0}.qstats h3{display:flex;justify-content:space-between;gap:8px;margin:0 0 7px}.tight{margin-bottom:5px}.hint{display:block;font-size:.82rem;color:#667b8f;margin-top:5px}.toolbar{display:flex;flex-wrap:wrap;align-items:end;gap:10px}.toolbar>div{flex:1;min-width:130px}.keygrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}.keytile{border:1px solid #dce6ed;padding:8px;border-radius:10px;background:#f8fbff}.keytile label{margin:0 0 3px}.keytile select{padding:6px}.classcheck{display:inline-flex;align-items:center;gap:5px;padding:8px 10px;margin:4px;border:1px solid #d9e5ef;border-radius:9px;background:#f8fbff}.classcheck input{width:auto}.examitem{padding:10px 12px;border:1px solid #dae4ee;border-radius:10px;margin:7px 0;display:flex;align-items:center;justify-content:space-between;gap:9px}.examitem.active{border-color:#5498d2;background:#f3f9ff}.subtle{font-size:.83rem;color:#60758b}.notice{background:#f0f7ff;padding:10px;border:1px solid #d3e7f9;border-radius:9px}.question-count{font-weight:700;color:#1b6096}.line{border:0;border-top:1px solid #e6edf2;margin:14px 0}.choices-tr td{min-width:36px}.report-table td:first-child,.report-table th:first-child{position:sticky;left:0;background:#fff;z-index:1}.report-table th:first-child{background:#f3f7fa}@media(max-width:540px){.nav button{font-size:.72rem;padding:12px 0}.row3{grid-template-columns:1fr}.card{padding:12px}.toolbar>div{min-width:120px}.statwide{padding:10px}}
-</style></head><body>
-<header><div><strong>▣ QUÉT THẺ LỚP HỌC</strong><small>V5 · Nhiều lớp · Nhiều đề · Đồng bộ đám mây</small></div><button id="backup-top">⬇ Sao lưu</button></header>
+<style>
+/* V5.2: Vạch tham chiếu ba dải ở lớp; không cắt nội dung camera */
+.scan-guide{position:absolute;inset:0;z-index:1;pointer-events:none;display:grid;grid-template-rows:repeat(3,1fr);opacity:.90}
+.scan-guide>div{border-bottom:1px dashed rgba(135,228,248,.75);position:relative}
+.scan-guide>div:last-child{border-bottom:none}
+.scan-guide span{position:absolute;top:6px;left:7px;background:rgba(1,26,49,.55);color:#fff;font-size:10px;padding:3px 6px;border-radius:5px}
+#camera-box{aspect-ratio:4/3;min-height:230px}
+#camera-device:disabled{color:#64748b}
+@media(max-width:540px){#camera-box{aspect-ratio:4/3;min-height:240px;max-height:75vh}}
+</style></style></head><body>
+<header><div><strong>▣ QUÉT THẺ LỚP HỌC</strong><small>V5.2 · Quét 3 hàng × 4 thẻ · Đồng bộ đám mây</small></div><button id="backup-top">⬇ Sao lưu</button></header>
 <nav class="nav"><button data-tab="scan" class="active">📷 Quét</button><button data-tab="class">👥 Lớp</button><button data-tab="exam">📝 Đề thi</button><button data-tab="report">📊 Thống kê</button><button data-tab="guide">ⓘ Hướng dẫn</button><button data-tab="cloud">☁ Đồng bộ</button></nav>
 <main>
 <section id="page-scan" class="page active">
@@ -13,15 +22,19 @@
 <div class="stats"><div class="stat"><b id="stat-total">0</b><span>Có mặt dự kiến</span></div><div class="stat"><b id="stat-scanned">0</b><span>Đã quét câu này</span></div><div class="stat"><b id="stat-missing">0</b><span>Chưa quét / câu</span></div></div>
 <div class="control"><button id="prev-question">◀ Câu trước</button><span class="qnum">Câu <span id="q-now">1</span></span><span class="subtle">/ <b id="scan-total-questions">1</b></span><button id="next-question" class="primary">Câu sau ▶</button></div>
 <div class="box-margin"><label for="answer-key">Đáp án đúng của câu hiện tại</label><div class="control"><select id="answer-key" style="max-width:145px"><option value="">— Chưa nhập —</option><option>A</option><option>B</option><option>C</option><option>D</option></select><label style="margin:0;font-weight:400"><input type="checkbox" id="overwrites" style="width:auto"> Cho phép quét ghi đè lựa chọn</label></div></div></div>
-<div class="card"><h2>Quét nhiều thẻ trong cùng khung hình</h2><div class="camera"><video id="camera-video" autoplay muted playsinline></video><canvas id="overlay" class="overlay"></canvas><div id="cam-placeholder" class="cam-placeholder">Bấm “Bật camera” để bắt đầu</div></div><canvas id="detector-canvas" class="hide"></canvas>
-<div class="control box-margin"><button class="success" id="btnstart">📷 Bật camera</button><button id="btnstop">Dừng quét</button><button id="btnphoto">📁 Quét từ ảnh</button><input id="image-upload" type="file" accept="image/*" capture="environment" class="hide"></div><div id="scanner-status" class="muted box-margin">Giữ nguyên cách quét QR nhóm tự do của bản V3.</div><p class="small muted">Mỗi thẻ gắn cố định với một học sinh của <b>lớp đang chọn</b>. Có thể quét bất kỳ 8 thẻ gần nhau; mã được gộp qua nhiều khung hình, không đếm trùng trong cùng câu.</p></div>
+<div class="card"><h2>Quét nhiều thẻ trong cùng khung hình</h2>
+<div class="row"><div><label for="scan-mode">Chế độ quét</label><select id="scan-mode"><option value="12" selected>3 hàng × 4 học sinh (12 thẻ/lượt)</option><option value="8">Quét thông thường (8 thẻ/lượt)</option></select></div><div><label for="camera-device">Ống kính / camera</label><select id="camera-device" disabled><option value="">Camera sau (mặc định)</option></select></div></div>
+<p class="muted small">Chế độ 12 thẻ: cầm iPhone <b>ngang</b>, đặt thẻ hàng 1 ngang ngực, hàng 2 ngang đầu, hàng 3 cao hơn đầu. Nếu iPhone cho phép chọn ống kính siêu rộng, chọn ở ô camera; trình duyệt Safari có thể chỉ cung cấp camera sau mặc định.</p>
+<div class="camera" id="camera-box"><video id="camera-video" autoplay muted playsinline></video><canvas id="overlay" class="overlay"></canvas><div class="scan-guide" id="scan-guide"><div><span>HÀNG 3 · CAO QUÁ ĐẦU</span></div><div><span>HÀNG 2 · NGANG ĐẦU</span></div><div><span>HÀNG 1 · NGANG NGỰC</span></div></div><div id="cam-placeholder" class="cam-placeholder">Bấm “Bật camera” để bắt đầu</div></div><canvas id="detector-canvas" class="hide"></canvas>
+<div class="control box-margin"><button class="success" id="btnstart">📷 Bật camera</button><button id="btnstop">Dừng quét</button><button id="btnphoto">📸 Chụp / chọn ảnh HD</button><input id="image-upload" type="file" accept="image/*" capture="environment" class="hide"></div>
+<div id="camera-meta" class="muted small box-margin">Camera chưa bật.</div><div id="scanner-status" class="muted box-margin">Chế độ 12 thẻ đọc cộng dồn các khung hình; nhận bao nhiêu mã thì lưu bấy nhiêu, không bắt buộc đúng 12.</div><p class="small muted">Mã thẻ luôn liên kết <b>học sinh của lớp đang chọn</b>, dù các em đổi chỗ. Không đếm trùng trong một câu. Nếu camera khó đọc hàng xa, đứng gần hơn hoặc dùng nút <b>Chụp / chọn ảnh HD</b> rồi quét bổ sung.</p></div>
 <div class="card"><div class="control" style="justify-content:space-between"><h2 style="margin:0">Nhóm quét bất kỳ</h2><button id="new-group" class="primary">＋ Lượt mới</button></div><p class="muted">Lượt mới chỉ xóa danh sách tạm của nhóm, không xóa đáp án đã ghi nhận trong câu.</p>
 <div class="stats"><div class="stat"><b id="group-count">0</b><span>Thẻ mới trong lượt</span></div><div class="stat"><b id="group-present">0</b><span>Đã ghi nhận / câu</span></div><div class="stat"><b id="group-target">0</b><span>Dự kiến có mặt</span></div></div>
 <div class="table-wrap"><table><thead><tr><th>Thẻ</th><th>Học sinh</th><th>Đáp án</th></tr></thead><tbody id="group-table"></tbody></table></div></div>
 <div class="card"><div class="control" style="justify-content:space-between"><h2 style="margin:0">Câu <span id="dist-question">1</span>: phân bố lựa chọn</h2><button id="clear-question" class="danger">Xóa câu này</button></div><div id="distribution" class="row4"></div><div class="muted" id="quick-dist-note"></div><h3>Đã quét</h3><div class="list-scan" id="scanned-list"></div><h3>Chưa quét (trừ học sinh vắng)</h3><div class="list-scan" id="missing-list"></div><div class="box-margin"><button id="toggle-manual">⌨ Nhập / sửa thủ công</button><div id="manual" class="hide box-margin"><div class="control"><input id="manual-id" type="number" min="1" max="63" style="max-width:95px" placeholder="Số thẻ"><select id="manual-answer" style="max-width:95px"><option>A</option><option>B</option><option>C</option><option>D</option></select><button id="manual-save" class="primary">Ghi</button><button id="manual-remove">Xóa</button></div></div></div></div>
 </section>
 <section id="page-class" class="page">
-<div class="card"><h2>Quản lý nhiều lớp học</h2><div class="row"><div><label for="class-picker">Chọn lớp cần chỉnh sửa</label><select id="class-picker"></select></div><div><label for="new-class-name">Thêm lớp mới</label><div class="control"><input id="new-class-name" placeholder="Ví dụ: 10/2" style="flex:1;min-width:110px"><button id="create-class" class="primary">＋ Tạo lớp</button></div></div></div><div class="box-margin"><label for="rename-class">Tên lớp hiện tại</label><div class="control"><input id="rename-class" style="flex:1;min-width:150px"><button id="save-class-name">Đổi tên</button></div></div><p class="notice">Mỗi lớp dùng thẻ số 01–63. Cùng mã 01 có thể là hai học sinh khác nhau ở hai lớp; kết quả luôn gắn với <b>lớp + đề + mã thẻ</b>.</p></div>
+<div class="card"><h2>Quản lý nhiều lớp học</h2><div class="row"><div><label for="class-picker">Chọn lớp cần chỉnh sửa</label><select id="class-picker"></select></div><div><label for="new-class-name">Thêm lớp mới</label><div class="control"><input id="new-class-name" placeholder="Ví dụ: 10/2" style="flex:1;min-width:110px"><button id="create-class" class="primary">＋ Tạo lớp</button></div></div></div><div class="box-margin"><label for="rename-class">Tên lớp hiện tại</label><div class="control"><input id="rename-class" style="flex:1;min-width:150px"><button id="save-class-name">Đổi tên</button></div></div><div class="control box-margin" style="justify-content:space-between"><span class="muted">Chỉ xóa lớp được chọn ở ô phía trên.</span><button id="delete-class" class="danger" type="button">🗑 Xóa lớp này</button></div><p class="notice">Mỗi lớp dùng thẻ số 01–63. Cùng mã 01 có thể là hai học sinh khác nhau ở hai lớp; kết quả luôn gắn với <b>lớp + đề + mã thẻ</b>.</p></div>
 <div class="card"><h2>Nhập danh sách lớp từ Excel</h2><p class="muted">Hỗ trợ <b>.xlsx, .xls, .csv</b>. File cần có cột <b>Mã thẻ</b> (01–63) và <b>Họ và tên</b>. Nếu chỉ có cột STT, STT sẽ được dùng làm mã thẻ. Chọn lớp trước khi nhập.</p><div class="control"><input id="student-file" type="file" accept=".xlsx,.xls,.csv,text/csv" style="flex:1;min-width:160px"><button id="import-students" class="primary">⬆ Nhập vào lớp</button><button id="template-excel">⬇ File Excel mẫu</button></div><p class="muted" id="excel-status"></p><div class="row"><div><label for="roster-paste">Hoặc dán nhanh: mã thẻ;họ tên (mỗi dòng)</label><textarea id="roster-paste" rows="5" placeholder="01;Nguyễn Văn A&#10;02;Trần Thị B"></textarea></div><div><label>Ghi chú</label><p class="muted">Danh sách cập nhật cho <b>đề mới</b>. Kết quả đề cũ vẫn dùng ảnh chụp danh sách tại thời điểm tạo phiên chấm, để không nhầm học sinh khi chuyển lớp hoặc thay danh sách.</p></div></div><button id="save-roster-paste">Lưu danh sách nhập tay</button></div>
 <div class="card"><div class="control" style="justify-content:space-between"><h2 style="margin:0">Danh sách học sinh · <span id="class-roster-title"></span></h2><span class="tag" id="class-roster-count">0 em</span></div><div class="table-wrap"><table><thead><tr><th>Mã thẻ</th><th>Họ và tên</th></tr></thead><tbody id="roster-table"></tbody></table></div></div>
 <div class="card"><h2>Học sinh vắng theo từng đề</h2><p class="muted">Thiết lập vắng chỉ áp dụng cho <b>đề và lớp hiện đang mở</b>, không xóa học sinh khỏi danh sách lớp.</p><div class="control"><input id="absent-ids" style="flex:1;min-width:180px" placeholder="Ví dụ: 3, 14, 29"><button id="save-absent" class="primary">Lưu học sinh vắng</button></div><p class="muted" id="attendance-status"></p></div>
@@ -29,7 +42,7 @@
 <section id="page-exam" class="page">
 <div class="card"><h2>Tạo đề mới (không xóa đề cũ)</h2><div class="row"><div><label for="new-exam-title">Tên đề</label><input id="new-exam-title" placeholder="Đề 1 – Hàm số"></div><div><label for="new-exam-count">Số câu hỏi</label><input id="new-exam-count" type="number" min="1" max="120" value="10"></div></div><label>Áp dụng cho lớp nào?</label><div id="new-exam-classes"></div><button id="create-exam" class="primary box-margin">＋ Tạo đề và lưu riêng</button></div>
 <div class="card"><h2>Các đề đã lưu</h2><div id="exam-list"></div></div>
-<div class="card"><h2>Chỉnh sửa đề đã chọn</h2><div class="row"><div><label for="edit-exam-select">Đề</label><select id="edit-exam-select"></select></div><div><label for="edit-exam-title">Tên đề</label><input id="edit-exam-title"></div></div><div class="row"><div><label for="edit-exam-count">Số câu hỏi (1–120)</label><input id="edit-exam-count" type="number" min="1" max="120"></div><div><label>Gán cho các lớp</label><div id="edit-exam-classes"></div></div></div><hr class="line"><label for="edit-exam-quickkeys">Nhập nhanh đáp án: ví dụ ABCDABCD hoặc A,B,C,D</label><textarea id="edit-exam-quickkeys" rows="3" placeholder="ABCDABCD...; dùng dấu - nếu chưa có đáp án"></textarea><div class="control"><button id="apply-quickkeys">Áp dụng chuỗi đáp án</button><button id="save-exam" class="primary">💾 Lưu cấu hình đề</button></div><h3 class="box-margin">Đáp án từng câu</h3><div id="keys-grid" class="keygrid"></div></div>
+<div class="card" id="exam-editor-card"><h2>Chỉnh sửa đề đã chọn</h2><div class="row"><div><label for="edit-exam-select">Đề</label><select id="edit-exam-select"></select></div><div><label for="edit-exam-title">Tên đề</label><input id="edit-exam-title"></div></div><div class="row"><div><label for="edit-exam-count">Số câu hỏi (1–120)</label><input id="edit-exam-count" type="number" min="1" max="120"></div><div><label>Gán cho các lớp</label><div id="edit-exam-classes"></div></div></div><hr class="line"><label for="edit-exam-quickkeys">Nhập nhanh đáp án: ví dụ ABCDABCD hoặc A,B,C,D</label><textarea id="edit-exam-quickkeys" rows="3" placeholder="ABCDABCD...; dùng dấu - nếu chưa có đáp án"></textarea><div class="control"><button id="apply-quickkeys">Áp dụng chuỗi đáp án</button><button id="save-exam" class="primary">💾 Lưu cấu hình đề</button><button id="delete-exam" class="danger" type="button">🗑 Xóa đề này</button></div><h3 class="box-margin">Đáp án từng câu</h3><div id="keys-grid" class="keygrid"></div></div>
 </section>
 <section id="page-report" class="page">
 <div class="card"><h2>Thống kê và bảng điểm theo đề</h2><div class="row"><div><label for="report-exam">Chọn đề</label><select id="report-exam"></select></div><div><label for="report-class">Chọn lớp hoặc tất cả lớp</label><select id="report-class"></select></div></div><div class="stats"><div class="stat"><b id="r-total">0</b><span>Học sinh theo phiên</span></div><div class="stat"><b id="r-count">0</b><span>Số câu đề</span></div><div class="stat"><b id="r-av">—</b><span>Điểm TB (các câu có đáp án)</span></div></div><div class="control"><button id="export-csv" class="primary">⬇ Bảng điểm (CSV)</button><button id="export-detail">⬇ Chi tiết (CSV)</button><button id="export-stats">⬇ Thống kê A/B/C/D</button><button id="refresh-report">Làm mới</button></div><p class="muted">Tỷ lệ chọn A/B/C/D = số lượt chọn phương án đó / <b>số học sinh đã trả lời câu đó</b> × 100%. Học sinh chưa quét không thuộc mẫu số; số chưa quét được trình bày riêng.</p></div>
@@ -37,7 +50,7 @@
 <div class="card"><h2>Bảng điểm theo học sinh</h2><div class="table-wrap"><table id="report-table" class="report-table"></table></div></div>
 </section>
 <section id="page-guide" class="page">
-<div class="card"><h2>Hướng dẫn sử dụng bản V5</h2><p><b>1.</b> Ở tab <b>Lớp</b>, tạo 10/1, 10/2, 10/3... và tải file Excel chứa mã thẻ, họ tên cho từng lớp.</p><p><b>2.</b> Ở tab <b>Đề thi</b>, tạo Đề 1, Đề 2..., nhập số câu và đáp án. Có thể chọn nhiều lớp cho cùng đề; mỗi lớp có phiên quét và điểm riêng.</p><p><b>3.</b> Ở tab <b>Quét</b>, chọn lớp và đề rồi quét nhóm bất kỳ như bản V3; mã thẻ luôn liên kết đúng học sinh của lớp đang chọn.</p><p><b>4.</b> Ở tab <b>Thống kê</b>, xem phần trăm A/B/C/D từng câu, bảng điểm và xuất CSV.</p><p><b>5.</b> Ở tab <b>☁ Đồng bộ</b>, có thể đăng nhập Firebase để chuyển dữ liệu giữa máy tính và iPhone. Dữ liệu vẫn được lưu cục bộ để quét khi không có mạng. Nên sao lưu JSON sau mỗi buổi.</p><div class="warn">Lần cập nhật đầu tiên có cơ chế chuyển dữ liệu V3 sang V4. <b>Trước khi tải V4 lên GitHub, nên sao lưu JSON từ ứng dụng V3 để dự phòng.</b> Không xóa dữ liệu Safari của website sau khi sử dụng. Đồng bộ đám mây cần cấu hình Firebase trước khi sử dụng.</div></div>
+<div class="card"><h2>Hướng dẫn sử dụng bản V5.1</h2><p><b>1.</b> Ở tab <b>Lớp</b>, tạo 10/1, 10/2, 10/3... và tải file Excel chứa mã thẻ, họ tên cho từng lớp.</p><p><b>2.</b> Ở tab <b>Đề thi</b>, tạo Đề 1, Đề 2..., nhập số câu và đáp án. Có thể chọn nhiều lớp cho cùng đề; mỗi lớp có phiên quét và điểm riêng.</p><p><b>3.</b> Ở tab <b>Quét</b>, chọn lớp và đề rồi quét nhóm bất kỳ như bản V3; mã thẻ luôn liên kết đúng học sinh của lớp đang chọn.</p><p><b>4.</b> Ở tab <b>Thống kê</b>, xem phần trăm A/B/C/D từng câu, bảng điểm và xuất CSV.</p><p><b>5.</b> Để <b>xóa lớp</b>, vào tab Lớp, chọn lớp và bấm <b>🗑 Xóa lớp này</b>. Để <b>xóa đề</b>, vào tab Đề thi, chọn đề trong phần Chỉnh sửa rồi bấm <b>🗑 Xóa đề này</b>. Phải xác nhận đúng tên để xóa. Việc xóa cũng xóa các bài làm liên quan; các lớp/đề khác được giữ lại. Hãy tải bản sao lưu JSON trước khi xóa; thiết bị khác sẽ nhận thay đổi khi đồng bộ Firebase.</p><p><b>6.</b> Ở tab <b>☁ Đồng bộ</b>, có thể đăng nhập Firebase để chuyển dữ liệu giữa máy tính và iPhone. Dữ liệu vẫn được lưu cục bộ để quét khi không có mạng. Nên sao lưu JSON sau mỗi buổi.</p><div class="warn">Lần cập nhật đầu tiên có cơ chế chuyển dữ liệu V3 sang V4. <b>Trước khi xóa lớp hoặc đề, hãy nhấn nút Sao lưu ở góc trên phải, tải file JSON và kiểm tra file đã lưu thành công.</b> Không xóa dữ liệu Safari của website sau khi sử dụng. Đồng bộ đám mây cần cấu hình Firebase trước khi sử dụng.</div></div>
 <div class="card"><h2>Trạng thái ngoại tuyến</h2><button id="check-offline">Kiểm tra lưu ngoại tuyến</button><p id="offline-check-result" class="muted">Chưa kiểm tra.</p><p class="muted">Ứng dụng cần tải mã quét QR và bộ đọc Excel một lần khi có Internet. Để dùng tại lớp không có Wi-Fi, mở thử trong chế độ máy bay, kiểm tra camera và quét 4–8 thẻ trước.</p></div>
 <div class="card"><h2>Sao lưu / khôi phục toàn bộ lớp và đề</h2><div class="control"><button id="download-json" class="primary">⬇ Xuất bản sao lưu JSON</button><button id="import-json">⬆ Khôi phục từ JSON</button><input id="json-upload" class="hide" type="file" accept=".json,application/json"></div><p class="muted">Sao lưu bao gồm tất cả lớp, đề và kết quả theo từng học sinh. File lưu riêng trên thiết bị giáo viên; không đưa file này vào GitHub Public.</p></div>
 </section>
@@ -122,8 +135,28 @@ $('toggle-manual').onclick=()=>$('manual').classList.toggle('hide');
 function record(id,answer,manual=false){if(!S)return false;id=Number(id);if(!Number.isInteger(id)||!rosterIds().has(id)||!['A','B','C','D'].includes(answer))return false;const old=curAns()[id];if(old&&!manual&&!$('overwrites').checked)return false;if(old===answer)return false;curAns()[id]=answer;groupHits.set(id,answer);if(absent().has(id))S.absentIds=S.absentIds.filter(n=>+n!==id);store();renderScan();return true}
 $('manual-save').onclick=()=>toast(record($('manual-id').value,$('manual-answer').value,true)?'Đã lưu lựa chọn':'Mã không thuộc lớp hoặc đáp án không thay đổi');
 $('manual-remove').onclick=()=>{const id=+$('manual-id').value;if(!rosterIds().has(id))return toast('Mã thẻ không thuộc lớp');delete curAns()[id];groupHits.delete(id);store();renderScan()};
-function renderClasses(){const c=DB.classes.find(x=>x.id===$('class-picker').value)||activeClass()||DB.classes[0];$('class-picker').innerHTML=options(DB.classes,c.id);$('rename-class').value=c.name;$('class-roster-title').textContent=c.name;$('class-roster-count').textContent=c.students.length+' em';$('roster-table').innerHTML=c.students.map(p=>`<tr><td>${String(p.id).padStart(2,'0')}</td><td>${esc(p.name)}</td></tr>`).join('');$('absent-ids').value=S?.absentIds.join(', ')||'';$('attendance-status').textContent=`${S?S.className+' · '+S.title:'Chưa chọn đề'}: dự kiến ${S?expected():0} học sinh có mặt.`}
+function renderClasses(){const c=DB.classes.find(x=>x.id===$('class-picker').value)||activeClass()||DB.classes[0];$('class-picker').innerHTML=options(DB.classes,c.id);$('rename-class').value=c.name;$('class-roster-title').textContent=c.name;$('class-roster-count').textContent=c.students.length+' em';$('delete-class').disabled=DB.classes.length<=1;$('roster-table').innerHTML=c.students.map(p=>`<tr><td>${String(p.id).padStart(2,'0')}</td><td>${esc(p.name)}</td></tr>`).join('');$('absent-ids').value=S?.absentIds.join(', ')||'';$('attendance-status').textContent=`${S?S.className+' · '+S.title:'Chưa chọn đề'}: dự kiến ${S?expected():0} học sinh có mặt.`}
 $('class-picker').onchange=e=>{switchContext(e.target.value,null,false);renderClasses()};
+// Xóa lớp theo ID ổn định, không dựa vào vị trí ngồi/thứ tự danh sách.
+$('delete-class').onclick=()=>{
+ const c=DB.classes.find(x=>x.id===$('class-picker').value);
+ if(!c)return toast('Hãy chọn lớp cần xóa');
+ if(DB.classes.length<=1)return toast('Không thể xóa lớp cuối cùng. Có thể đổi tên lớp này.');
+ const impacted=DB.exams.filter(ex=>ex.classIds.includes(c.id)||ex.sessions?.[c.id]);
+ const answered=impacted.reduce((sum,ex)=>sum+(ex.sessions?.[c.id]?.answers||[]).reduce((a,row)=>a+Object.keys(row||{}).length,0),0);
+ const summary=`XÓA LỚP ${c.name}?\n\n- ${c.students.length} học sinh\n- ${impacted.length} đề có liên quan\n- ${answered} lượt trả lời sẽ bị xóa.\n\nCác lớp khác không bị xóa. Thao tác sẽ đồng bộ lên iPhone/máy tính nếu Firebase kết nối.\n\nHãy Sao lưu JSON trước khi tiếp tục.`;
+ if(!confirm(summary))return;
+ const typed=prompt(`Nhập chính xác tên lớp ${c.name} để xác nhận xóa:`);
+ if(typed!==c.name)return toast('Đã hủy xóa lớp (tên xác nhận không khớp).');
+ // Chỉ xóa bài làm thuộc lớp này. Giữ cấu trúc các đề đã gán cho lớp khác.
+ DB.classes=DB.classes.filter(x=>x.id!==c.id);
+ for(const ex of DB.exams){ex.classIds=ex.classIds.filter(id=>id!==c.id);if(ex.sessions)delete ex.sessions[c.id]}
+ if(reportClassId===c.id)reportClassId='ALL';
+ const nextClass=DB.classes.some(x=>x.id===DB.activeClassId)?DB.activeClassId:DB.classes[0].id;
+ switchContext(nextClass,DB.activeExamId,false);
+ renderClasses();renderExams();renderReport();
+ toast('Đã xóa lớp '+c.name+' và chỉ các kết quả thuộc lớp đó.');
+};
 $('create-class').onclick=()=>{const name=safeName($('new-class-name').value);if(!name)return toast('Nhập tên lớp');if(DB.classes.some(c=>c.name.toLowerCase()===name.toLowerCase()))return toast('Lớp này đã tồn tại');const c={id:uid('lop'),name,students:[]};DB.classes.push(c);saveDB();$('new-class-name').value='';switchContext(c.id,null,false);renderClasses();toast('Đã tạo '+name+'. Hãy nhập danh sách Excel.')};
 $('save-class-name').onclick=()=>{const c=DB.classes.find(x=>x.id===$('class-picker').value);const name=safeName($('rename-class').value);if(!c||!name)return;if(DB.classes.some(x=>x.id!==c.id&&x.name.toLowerCase()===name.toLowerCase()))return toast('Trùng tên lớp');c.name=name;saveDB();renderClasses();renderSelectors();if(S&&DB.activeClassId===c.id){S.className=name;renderScan()}};
 function updateRoster(data){const c=DB.classes.find(x=>x.id===$('class-picker').value);if(!c)return;const seen=new Set();for(const s of data){if(!Number.isInteger(s.id)||s.id<1||s.id>63)throw Error('Mã thẻ phải là số từ 1 đến 63');if(seen.has(s.id))throw Error('Trùng mã thẻ '+s.id);seen.add(s.id);if(!s.name)throw Error('Thiếu họ tên ở thẻ '+s.id)}if(!data.length)throw Error('Không có học sinh hợp lệ trong file');if(c.students.length&&!confirm(`Thay danh sách ${c.name} bằng ${data.length} học sinh? Các đề đã chấm vẫn giữ danh sách cũ.`))return; c.students=data.sort((a,b)=>a.id-b.id);
@@ -151,15 +184,31 @@ $('save-roster-paste').onclick=()=>{try{const rows=$('roster-paste').value.trim(
 $('template-excel').onclick=()=>{const rows=[['Mã thẻ','Họ và tên'],...Array.from({length:48},(_,i)=>[i+1,''])];if(typeof XLSX!=='undefined'){const ws=XLSX.utils.aoa_to_sheet(rows);ws['!cols']=[{wch:14},{wch:33}];const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,'Danh sách lớp');XLSX.writeFile(wb,'Mau_Danh_sach_lop_48.xlsx')}else{csvDownload(rows,'Mau_Danh_sach_lop_48.csv');toast('Không có thư viện Excel, đã tải mẫu CSV thay thế')}};
 $('save-absent').onclick=()=>{if(!S)return toast('Chọn lớp và đề trên tab Quét');const ids=[...new Set(($('absent-ids').value.match(/\d+/g)||[]).map(Number))];const invalid=ids.filter(id=>!rosterIds().has(id));if(invalid.length)return toast('Mã không thuộc lớp: '+invalid.join(', '));S.absentIds=ids;store();renderScan();renderClasses();toast('Đã lưu danh sách vắng của phiên chấm này')};
 function examHasAnswers(ex,classId){const se=ex.sessions?.[classId];return !!se?.answers?.some(ans=>Object.keys(ans||{}).length)}
-function examCard(ex){const total=ex.classIds.map(id=>DB.classes.find(c=>c.id===id)?.name||'Lớp đã đổi').join(', ');const used=Object.values(ex.sessions||{}).reduce((n,s)=>n+(s.answers||[]).reduce((sum,a)=>sum+Object.keys(a||{}).length,0),0);return `<div class="examitem ${ex.id===DB.activeExamId?'active':''}"><div><strong>${esc(ex.title)}</strong><div class="subtle">${ex.questionCount} câu · ${esc(total)} · ${used} lượt trả lời đã lưu</div></div><button data-open-exam="${esc(ex.id)}">Mở đề</button></div>`}
+function examCard(ex){const total=ex.classIds.map(id=>DB.classes.find(c=>c.id===id)?.name||'Lớp đã đổi').join(', ')||'Chưa gán lớp';const used=Object.values(ex.sessions||{}).reduce((n,s)=>n+(s.answers||[]).reduce((sum,a)=>sum+Object.keys(a||{}).length,0),0);return `<div class="examitem ${ex.id===DB.activeExamId?'active':''}"><div><strong>${esc(ex.title)}</strong><div class="subtle">${ex.questionCount} câu · ${esc(total)} · ${used} lượt trả lời đã lưu</div></div><button data-open-exam="${esc(ex.id)}" ${ex.classIds.length?'':'disabled title="Hãy gán lớp cho đề trước"'}>Mở đề</button></div>`}
 function classCheckboxes(selected){return DB.classes.map(c=>`<label class="classcheck"><input type="checkbox" value="${esc(c.id)}" ${selected.includes(c.id)?'checked':''}><span>${esc(c.name)}</span></label>`).join('')}
 function selectedCheckboxes(id){return [...$(id).querySelectorAll('input:checked')].map(x=>x.value)}
 function renderExams(){const ex=DB.exams.find(x=>x.id===editExamId)||activeExam()||DB.exams[0];editExamId=ex?.id||null;$('new-exam-classes').innerHTML=classCheckboxes([DB.activeClassId]);$('exam-list').innerHTML=DB.exams.length?DB.exams.map(examCard).join(''):'<p class="muted">Chưa có đề.</p>';
  $('exam-list').querySelectorAll('[data-open-exam]').forEach(b=>b.onclick=()=>{const x=DB.exams.find(e=>e.id===b.dataset.openExam),target=x.classIds.includes(DB.activeClassId)?DB.activeClassId:x.classIds[0];switchContext(target,x.id);go('scan')});
- $('edit-exam-select').innerHTML=options(DB.exams,ex?.id);fillExamEditor(ex)}
+ $('edit-exam-select').innerHTML=options(DB.exams,ex?.id);$('exam-editor-card').classList.toggle('hide',!ex);if(ex)fillExamEditor(ex)}
 function fillExamEditor(ex){if(!ex)return;$('edit-exam-title').value=ex.title;$('edit-exam-count').value=ex.questionCount;$('edit-exam-classes').innerHTML=classCheckboxes(ex.classIds);$('edit-exam-quickkeys').value=ex.keys.map(k=>k||'-').join('');$('keys-grid').innerHTML=Array.from({length:ex.questionCount},(_,i)=>`<div class="keytile"><label>Câu ${i+1}</label><select data-key-index="${i}"><option value="">— Chưa có —</option>${'ABCD'.split('').map(c=>`<option value="${c}" ${ex.keys[i]===c?'selected':''}>${c}</option>`).join('')}</select></div>`).join('')}
 $('edit-exam-select').onchange=e=>{editExamId=e.target.value;fillExamEditor(DB.exams.find(x=>x.id===editExamId))};
 $('create-exam').onclick=()=>{const title=safeName($('new-exam-title').value)||`Đề ${DB.exams.length+1}`,q=Number($('new-exam-count').value),ids=selectedCheckboxes('new-exam-classes');if(!Number.isInteger(q)||q<1||q>120)return toast('Số câu phải từ 1 đến 120');if(!ids.length)return toast('Cần chọn ít nhất một lớp');const ex={id:uid('de'),title,classIds:ids,questionCount:q,keys:Array(q).fill(''),sessions:{},created:new Date().toISOString()};DB.exams.push(ex);editExamId=ex.id;saveDB();switchContext(ids[0],ex.id,false);go('exam');toast(`Đã tạo ${title}. Các đề trước vẫn được lưu.`)};
+// Xóa đề: cả cấu hình, đáp án và kết quả của riêng đề đó trên tất cả lớp.
+$('delete-exam').onclick=()=>{
+ const ex=DB.exams.find(x=>x.id===editExamId);
+ if(!ex)return toast('Hãy chọn đề cần xóa');
+ const answers=Object.values(ex.sessions||{}).reduce((sum,se)=>sum+(se.answers||[]).reduce((n,a)=>n+Object.keys(a||{}).length,0),0);
+ const summary=`XÓA ĐỀ ${ex.title}?\n\n- ${ex.questionCount} câu hỏi\n- Đã gán cho ${ex.classIds.length} lớp\n- ${answers} lượt trả lời sẽ bị xóa ở tất cả lớp.\n\nCác đề khác được giữ nguyên. Thay đổi có thể đồng bộ sang thiết bị khác qua Firebase.\n\nHãy Sao lưu JSON trước khi tiếp tục.`;
+ if(!confirm(summary))return;
+ const typed=prompt(`Nhập chính xác tên đề ${ex.title} để xác nhận xóa:`);
+ if(typed!==ex.title)return toast('Đã hủy xóa đề (tên xác nhận không khớp).');
+ DB.exams=DB.exams.filter(x=>x.id!==ex.id);
+ editExamId=DB.exams[0]?.id||null;
+ if(reportExamId===ex.id){reportExamId=null;reportClassId='ALL'}
+ switchContext(DB.activeClassId,DB.activeExamId,false);
+ renderExams();renderReport();renderClasses();
+ toast('Đã xóa đề '+ex.title+'. Các đề khác vẫn còn.');
+};
 $('apply-quickkeys').onclick=()=>{const ex=DB.exams.find(x=>x.id===editExamId);if(!ex)return;let raw=$('edit-exam-quickkeys').value.toUpperCase().replace(/[\s,;|.]/g,'');if(!/^[ABCD-]*$/.test(raw))return toast('Đáp án chỉ gồm A/B/C/D hoặc dấu -');const count=Number($('edit-exam-count').value);if(raw.length>count)return toast(`Có ${raw.length} đáp án nhưng số câu chỉ ${count}. Hãy tăng số câu trước.`);$('keys-grid').querySelectorAll('select').forEach((el,i)=>{el.value=raw[i]==='-'?'':raw[i]||''});toast('Đã đặt đáp án trên giao diện; nhấn Lưu cấu hình đề')};
 $('edit-exam-count').onchange=e=>{const q=Number(e.target.value);if(!Number.isInteger(q)||q<1||q>120)return;
  const container=$('keys-grid'),existing=new Map([...container.querySelectorAll('[data-key-index]')].map(sel=>[+sel.dataset.keyIndex,sel.value]));
@@ -175,7 +224,7 @@ $('save-exam').onclick=()=>{const ex=DB.exams.find(x=>x.id===editExamId);if(!ex)
 function sessionRows(ex,classIds){return classIds.map(id=>({classInfo:DB.classes.find(c=>c.id===id),session:ex.sessions?.[id]})).filter(x=>x.session).flatMap(({classInfo,session:se})=>{const ab=new Set(se.absentIds||[]);const graded=ex.keys.filter(Boolean).length;return se.roster.map(st=>{let answered=0,correct=0;const answers=Array.from({length:ex.questionCount},(_,i)=>{const a=se.answers?.[i]?.[st.id]||'';if(a)answered++;if(ex.keys[i]&&a===ex.keys[i])correct++;return a});return {classId:classInfo?.id,className:classInfo?.name||'Lớp cũ',id:st.id,name:st.name,absent:ab.has(st.id),answers,answered,correct,score:graded?(10*correct/graded):null}})})}
 function reportContext(){const ex=DB.exams.find(x=>x.id===reportExamId)||activeExam()||DB.exams[0];reportExamId=ex?.id;const allClasses=ex?.classIds||[];const chosen=reportClassId&&allClasses.includes(reportClassId)?reportClassId:'ALL';reportClassId=chosen;return {ex,classIds:chosen==='ALL'?allClasses:[chosen]}}
 function computeStats(ex,classIds){const result=[];for(let i=0;i<ex.questionCount;i++){const dist={A:0,B:0,C:0,D:0};let answered=0,eligible=0;for(const id of classIds){const se=ex.sessions?.[id];if(!se)continue;const ab=new Set(se.absentIds||[]);for(const st of se.roster){if(ab.has(st.id))continue;eligible++;const a=se.answers?.[i]?.[st.id];if(dist[a]!==undefined){answered++;dist[a]++}}}result.push({i:i+1,key:ex.keys[i]||'',dist,answered,eligible,missing:eligible-answered})}return result}
-function renderReport(){const {ex,classIds}=reportContext();if(!ex){$('report-distributions').innerHTML='Chưa có đề';return};$('report-exam').innerHTML=options(DB.exams,ex.id);
+function renderReport(){const {ex,classIds}=reportContext();if(!ex){$('report-distributions').innerHTML='Chưa có đề. Tạo một đề trong tab Đề thi.';$('report-table').innerHTML='';$('report-exam').innerHTML='';$('report-class').innerHTML='';for(const id of ['r-total','r-count'])$(id).textContent='0';$('r-av').textContent='—';for(const id of ['export-csv','export-detail','export-stats'])$(id).disabled=true;return};for(const id of ['export-csv','export-detail','export-stats'])$(id).disabled=false;$('report-exam').innerHTML=options(DB.exams,ex.id);
  $('report-class').innerHTML='<option value="ALL">Tất cả lớp được gán</option>'+ex.classIds.map(id=>{const c=DB.classes.find(x=>x.id===id);return `<option value="${esc(id)}" ${reportClassId===id?'selected':''}>${esc(c?.name||'Lớp đã đổi')}</option>`}).join('');
  const rows=sessionRows(ex,classIds),stats=computeStats(ex,classIds),scores=rows.filter(r=>!r.absent&&r.score!==null);$('r-total').textContent=rows.length;$('r-count').textContent=ex.questionCount;$('r-av').textContent=scores.length?(scores.reduce((t,r)=>t+r.score,0)/scores.length).toFixed(2):'—';
  $('report-distributions').innerHTML=stats.map(s=>`<div class="qstats"><h3><span>Câu ${s.i} ${s.key?`<span class="tag">Đáp án ${s.key}</span>`:''}</span><span class="muted">${s.answered}/${s.eligible} đã trả lời · ${s.missing} chưa quét</span></h3>`+'ABCD'.split('').map(k=>{const pc=s.answered?100*s.dist[k]/s.answered:0;return `<div class="splitbar"><span><b>${k}</b> ${s.key===k?'✓':''}</span><div class="progress ${k}"><i style="width:${pc.toFixed(1)}%"></i></div><span class="small">${pc.toFixed(1)}%</span></div><div class="muted tight" style="margin-left:72px">${s.dist[k]} học sinh chọn ${k}</div>`}).join('')+'</div>').join('');
@@ -234,11 +283,12 @@ function decodeOrientation(imageData,corners){
   return {answer:['C','B','A','D'][idx],scores,quality:separation};
 }
 let stream=null,scanning=false,frameTimer=null,seen=new Map(),lastNew=0;
+let activeDeviceId='', lastStatusUpdate=0;
 const cv=$('detector-canvas'),ctx=cv.getContext('2d',{willReadFrequently:true}),overlay=$('overlay'),oc=overlay.getContext('2d');
+const modeEl=$('scan-mode'), deviceEl=$('camera-device');
+function mode12(){return modeEl.value==='12'}
 function status(text){$('scanner-status').textContent=text}
 function readyDecoder(){if(typeof jsQR!=='function')throw Error('Chưa tải thư viện đọc QR. Hãy kết nối Internet một lần, mở lại trang HTTPS này rồi cài vào Màn hình chính.');}
-// jsQR trả về 4 góc theo hướng nội tại của mã QR; không bị giới hạn bởi Safari BarcodeDetector.
-// Mép QR từ góc chuẩn TL -> TR: hướng phải = A, xuống = D, trái = C, lên = B.
 function choiceFromLocation(loc){
   if(!loc?.topLeftCorner||!loc?.topRightCorner)return null;
   const a=loc.topLeftCorner,b=loc.topRightCorner,dx=b.x-a.x,dy=b.y-a.y;
@@ -246,45 +296,77 @@ function choiceFromLocation(loc){
   return Math.abs(dx)>Math.abs(dy)?(dx>=0?'A':'C'):(dy>=0?'D':'B');
 }
 function found(raw,answer){const m=/^LTHI:(\d{2})$/.exec(raw||'');if(!m||!answer)return null;const id=Number(m[1]);if(id<1||!rosterIds().has(id))return null;return {id,answer}}
+function updateCameraMeta(){
+ const t=stream?.getVideoTracks?.()[0],settings=t?.getSettings?.()||{},v=$('camera-video');
+ const label=t?.label||'Camera sau';
+ $('camera-meta').textContent=stream?`Nguồn ảnh: ${v.videoWidth||settings.width||'?'} × ${v.videoHeight||settings.height||'?'} px · ${label}. Quét ${mode12()?'12':'8'} thẻ mục tiêu/lượt.`:'Camera chưa bật.';
+}
+async function listCameras(){
+ try{
+   const devices=(await navigator.mediaDevices.enumerateDevices()).filter(d=>d.kind==='videoinput');
+   const track=stream?.getVideoTracks?.()[0], current=track?.getSettings?.().deviceId||'';
+   deviceEl.innerHTML='<option value="">Camera sau (mặc định)</option>';
+   devices.forEach((d,i)=>{if(!d.deviceId)return;const opt=document.createElement('option');opt.value=d.deviceId;opt.textContent=d.label||`Camera ${i+1}`;deviceEl.appendChild(opt)});
+   deviceEl.disabled=devices.length<2;
+   if(activeDeviceId&&devices.some(d=>d.deviceId===activeDeviceId))deviceEl.value=activeDeviceId;
+   else if(current&&devices.some(d=>d.deviceId===current))deviceEl.value=current;
+ }catch(e){deviceEl.disabled=true}
+}
 async function startCamera(){
  if(scanning)return;
- if(!activeExam()||!activeClass()){toast("Cần chọn lớp và đề trước khi quét.");return;}
+ if(!activeExam()||!activeClass()){toast('Cần chọn lớp và đề trước khi quét.');return;}
  try{
   readyDecoder();
   if(!navigator.mediaDevices?.getUserMedia)throw Error('Safari không cấp được camera. Hãy mở ứng dụng từ trang HTTPS hoặc biểu tượng trên Màn hình chính.');
-  stream=await navigator.mediaDevices.getUserMedia({audio:false,video:{facingMode:{ideal:'environment'},width:{ideal:1280},height:{ideal:720}}});
+  const constraints={facingMode:{ideal:'environment'},width:{ideal:1920},height:{ideal:1080}};
+  if(activeDeviceId){delete constraints.facingMode;constraints.deviceId={exact:activeDeviceId}}
+  try{stream=await navigator.mediaDevices.getUserMedia({audio:false,video:constraints})}
+  catch(e){if(!activeDeviceId)throw e;activeDeviceId='';stream=await navigator.mediaDevices.getUserMedia({audio:false,video:{facingMode:{ideal:'environment'},width:{ideal:1920},height:{ideal:1080}}})}
   const video=$('camera-video');video.srcObject=stream;await video.play();scanning=true;seen.clear();
-  $('cam-placeholder').classList.add('hide');status('Camera iPhone đã bật. Lia chậm qua từng dãy bàn.');setTimeout(requestLoop,200);
+  $('cam-placeholder').classList.add('hide');updateCameraMeta();listCameras();
+  status(mode12()?'Quét 3 hàng × 4 học sinh. Đọc cộng dồn; giữ yên thẻ 2–3 giây.':'Quét cộng dồn nhóm thẻ bất kỳ.');
+  setTimeout(requestLoop,200);
  }catch(err){stopCamera();status('⚠ '+err.message);toast('Không bật được camera: '+err.message)}
 }
-function stopCamera(){scanning=false;if(frameTimer)clearTimeout(frameTimer);frameTimer=null;if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}$('camera-video').srcObject=null;$('cam-placeholder').classList.remove('hide');oc.clearRect(0,0,overlay.width,overlay.height)}
+function stopCamera(){scanning=false;if(frameTimer)clearTimeout(frameTimer);frameTimer=null;if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}$('camera-video').srcObject=null;$('cam-placeholder').classList.remove('hide');oc.clearRect(0,0,overlay.width,overlay.height);updateCameraMeta()}
 $('btnstart').onclick=startCamera;$('btnstop').onclick=()=>{stopCamera();status('Đã dừng quét.')};
+modeEl.onchange=()=>{if(scanning){stopCamera();toast('Chế độ đã đổi. Nhấn Bật camera để quét lại.')}$('scan-guide').classList.toggle('hide',!mode12());status(mode12()?'Chế độ 12 thẻ: ba hàng, mỗi hàng bốn học sinh.':'Chế độ 8 thẻ thông thường.')};
+deviceEl.onchange=()=>{activeDeviceId=deviceEl.value;if(scanning){stopCamera();startCamera()}};
 const fragmentCanv=document.createElement('canvas');const fragmentContext=fragmentCanv.getContext('2d',{willReadFrequently:true});
+function tilesForMode(wide){
+ if(!wide)return [{x:0,y:0,w:.62,h:.62},{x:.38,y:0,w:.62,h:.62},{x:0,y:.38,w:.62,h:.62},{x:.38,y:.38,w:.62,h:.62}];
+ // 3 hàng x 2 nửa khung; mỗi nửa có tối đa 2 mã/hàng.
+ // Chồng lấn 16% ngang, 18% dọc để mã trên đường chia không bị cắt.
+ const coords=[];
+ for(let r=0;r<3;r++)for(let c=0;c<2;c++){
+   const x=c===0?0:.42, y=r===0?0:(r===1?.275:.55);
+   coords.push({x,y,w:.58,h:.45});
+ }
+ return coords;
+}
 function decodeMany(imageSource,W,H,photo=false){
-  // Chia ảnh thành 4 vùng lớn có chồng lấn để tìm NHIỀU thẻ trong một khung hình.
-  // Mỗi lần nhận QR trong vùng, xóa vùng QR đó và đọc tiếp tối đa 3 mã/vùng.
-  const grid=[{x:0,y:0,w:.62,h:.62},{x:.38,y:0,w:.62,h:.62},{x:0,y:.38,w:.62,h:.62},{x:.38,y:.38,w:.62,h:.62}];
-  const hits=new Map();
-  const more=photo?4:2;
-  for(const tile of grid){
-    const x=Math.round(tile.x*W),y=Math.round(tile.y*H),w=Math.min(Math.round(tile.w*W),W-x),h=Math.min(Math.round(tile.h*H),H-y);
-    fragmentCanv.width=w;fragmentCanv.height=h;fragmentContext.drawImage(imageSource,x,y,w,h,0,0,w,h);
-    for(let repeat=0;repeat<more;repeat++){
-      const data=fragmentContext.getImageData(0,0,w,h);
-      let code=null;
-      try{code=jsQR(data.data,w,h,{inversionAttempts:'dontInvert'})}catch(e){break}
-      if(!code)break;
-      const answer=choiceFromLocation(code.location),item=found(code.data,answer);
-      if(item)hits.set(item.id,item);
-      const loc=code.location;
-      if(!loc?.topLeftCorner||!loc?.topRightCorner||!loc?.bottomRightCorner||!loc?.bottomLeftCorner)break;
-      // Che vùng mã vừa được nhận diện để tiếp tục tìm thẻ khác trong cùng vùng.
-      const xs=[loc.topLeftCorner.x,loc.topRightCorner.x,loc.bottomRightCorner.x,loc.bottomLeftCorner.x],ys=[loc.topLeftCorner.y,loc.topRightCorner.y,loc.bottomRightCorner.y,loc.bottomLeftCorner.y];
-      const left=Math.max(0,Math.floor(Math.min(...xs)-12)),top=Math.max(0,Math.floor(Math.min(...ys)-12));
-      fragmentContext.fillStyle='white';fragmentContext.fillRect(left,top,Math.min(w-left,Math.ceil(Math.max(...xs)-left+12)),Math.min(h-top,Math.ceil(Math.max(...ys)-top+12)));
-    }
-  }
-  return [...hits.values()]
+ const hits=new Map(),wide=mode12();
+ const grid=tilesForMode(wide),more=wide?(photo?5:3):(photo?4:2);
+ for(const tile of grid){
+   const x=Math.round(tile.x*W),y=Math.round(tile.y*H),w=Math.min(Math.round(tile.w*W),W-x),h=Math.min(Math.round(tile.h*H),H-y);
+   if(w<40||h<40)continue;
+   fragmentCanv.width=w;fragmentCanv.height=h;
+   fragmentContext.drawImage(imageSource,x,y,w,h,0,0,w,h);
+   for(let repeat=0;repeat<more;repeat++){
+     const data=fragmentContext.getImageData(0,0,w,h);
+     let code=null;
+     try{code=jsQR(data.data,w,h,{inversionAttempts:'dontInvert'})}catch(e){break}
+     if(!code)break;
+     const answer=choiceFromLocation(code.location),item=found(code.data,answer);
+     if(item)hits.set(item.id,item);
+     const loc=code.location;
+     if(!loc?.topLeftCorner||!loc?.topRightCorner||!loc?.bottomRightCorner||!loc?.bottomLeftCorner)break;
+     const xs=[loc.topLeftCorner.x,loc.topRightCorner.x,loc.bottomRightCorner.x,loc.bottomLeftCorner.x],ys=[loc.topLeftCorner.y,loc.topRightCorner.y,loc.bottomRightCorner.y,loc.bottomLeftCorner.y];
+     const left=Math.max(0,Math.floor(Math.min(...xs)-12)),top=Math.max(0,Math.floor(Math.min(...ys)-12));
+     fragmentContext.fillStyle='white';fragmentContext.fillRect(left,top,Math.min(w-left,Math.ceil(Math.max(...xs)-left+12)),Math.min(h-top,Math.ceil(Math.max(...ys)-top+12)));
+   }
+ }
+ return [...hits.values()]
 }
 function accept(hits,isPhoto){const now=Date.now();let n=0;
  for(const hit of hits){
@@ -302,26 +384,29 @@ async function requestLoop(){
  try{
   const video=$('camera-video');
   if(video.readyState>=2){
-    const W=Math.min(960,video.videoWidth||960),H=Math.round(W*(video.videoHeight||720)/(video.videoWidth||960));
+    // V5.1 ép video xuống 960px; V5.2 giữ tới 1440px trong chế độ 12 thẻ.
+    const W=Math.min(mode12()?1440:960,video.videoWidth||960),H=Math.round(W*(video.videoHeight||720)/(video.videoWidth||960));
     cv.width=W;cv.height=H;ctx.drawImage(video,0,0,W,H);
-    const hits=decodeMany(cv,W,H,false),n=accept(hits,false);
-    if(n>0){lastNew=Date.now();status(`Vừa ghi thêm ${n} mã học sinh; lượt này ${groupHits.size} mã, câu ${S.question} đã ghi ${presentAnswerCount()}/${expected()}.`)}
+    const hits=decodeMany(cv,W,H,false),n=accept(hits,false),now=Date.now();
+    if(n>0){lastNew=now;status(`Vừa ghi thêm ${n} mã; lượt này ${groupHits.size} mã, câu ${S.question}: ${presentAnswerCount()}/${expected()} học sinh.`)}
+    else if(now-lastStatusUpdate>5500)status(`Camera hoạt động · Lượt ${groupHits.size} mã · Câu ${S.question}: ${presentAnswerCount()}/${expected()}. Di chuyển chậm nếu còn thiếu.`);
+    if(now-lastStatusUpdate>5500)lastStatusUpdate=now;
   }
  }catch(err){status('Đang xử lý camera: '+err.message)}
- if(scanning)frameTimer=setTimeout(requestLoop,260)
+ if(scanning)frameTimer=setTimeout(requestLoop,mode12()?450:260)
 }
 $('btnphoto').onclick=()=>$('image-upload').click();
 $('image-upload').onchange=async ev=>{
  const file=ev.target.files?.[0];if(!file)return;
  try{
-  readyDecoder();const bitmap=await createImageBitmap(file);let W=Math.min(2400,bitmap.width),H=Math.round(W*bitmap.height/bitmap.width);
+  readyDecoder();const bitmap=await createImageBitmap(file);let W=Math.min(mode12()?3000:2400,bitmap.width),H=Math.round(W*bitmap.height/bitmap.width);
   cv.width=W;cv.height=H;ctx.drawImage(bitmap,0,0,W,H);
   const hits=decodeMany(cv,W,H,true),n=accept(hits,true);
-  status(`Ảnh vừa đọc được ${hits.length} thẻ, ghi mới ${n} thẻ. Chưa ghi ${Math.max(0,expected()-presentAnswerCount())} mã có mặt.`);
+  status(`Ảnh vừa nhận dạng ${hits.length} thẻ, ghi mới ${n} thẻ. Chưa ghi ${Math.max(0,expected()-presentAnswerCount())} mã có mặt.`);
   toast(`Đã ghi ${n} thẻ mới từ ảnh; tổng nhận diện ${hits.length} thẻ`);bitmap.close?.();
  }catch(err){toast('Không quét được ảnh: '+err.message)}finally{ev.target.value=''}
 };
-$('check-offline').onclick=async()=>{const x=$('offline-check-result');try{const cache=await caches.open('qr-iphone-v4-01');const a=await cache.match('./index.html'),b=await cache.match('https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js'),c=await cache.match('https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js');x.textContent=`Giao diện: ${a?'đã lưu':'chưa lưu'}; QR: ${b&&typeof jsQR==='function'?'đã lưu':'thiếu'}; Excel: ${c&&typeof XLSX!=='undefined'?'đã lưu':'thiếu'}. Hãy thử chế độ máy bay với camera và tệp Excel.`}catch(err){x.textContent='Không kiểm tra được bộ nhớ ngoại tuyến: '+err.message}};
+$('check-offline').onclick=async()=>{const x=$('offline-check-result');try{const cache=await caches.open('qr-iphone-v52-12-01');const a=await cache.match('./index.html'),b=await cache.match('https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js'),c=await cache.match('https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js');x.textContent=`Giao diện: ${a?'đã lưu':'chưa lưu'}; QR: ${b&&typeof jsQR==='function'?'đã lưu':'thiếu'}; Excel: ${c&&typeof XLSX!=='undefined'?'đã lưu':'thiếu'}. Hãy thử chế độ máy bay với camera và tệp Excel.`}catch(err){x.textContent='Không kiểm tra được bộ nhớ ngoại tuyến: '+err.message}};
 function init(){if(!DB.classes.length)DB=defaultDB();const c=activeClass()||DB.classes[0];const ex=DB.exams.find(x=>x.id===DB.activeExamId&&x.classIds.includes(c.id))||DB.exams.find(x=>x.classIds.includes(c.id));DB.activeClassId=c.id;DB.activeExamId=ex?.id||null;S=ex?materialize():null;renderSelectors();if(S)renderScan();renderClasses();renderExams();renderReport();saveDB()}
 init();window.QR_CLOUD_BRIDGE={read:()=>({version:4,classes:structuredClone(DB.classes),exams:structuredClone(DB.exams)}),apply:obj=>{if(!obj||obj.version!==4||!Array.isArray(obj.classes)||!obj.classes.length||!Array.isArray(obj.exams))throw Error('Dữ liệu đám mây không hợp lệ');window.QR_CLOUD_APPLY=true;try{const prevClass=DB.activeClassId,prevExam=DB.activeExamId;DB={version:4,classes:structuredClone(obj.classes),exams:structuredClone(obj.exams),activeClassId:prevClass,activeExamId:prevExam};if(!DB.classes.some(x=>x.id===DB.activeClassId))DB.activeClassId=DB.classes[0].id;switchContext(DB.activeClassId,prevExam,false);renderClasses();renderExams();renderReport();}finally{window.QR_CLOUD_APPLY=false}},backup:backup};window.QR_V4_TEST={getDB:()=>DB,createContext:(classId,examId)=>switchContext(classId,examId,false),record,computeStats,sessionRows,parseGrid,parseCSV,getActive:()=>S};
 </script><script src="./firebase-config.js"></script><script type="module" src="./cloud-sync.js"></script><script>if('serviceWorker' in navigator && location.protocol==='https:'){navigator.serviceWorker.register('./sw.js').catch(e=>console.warn('Offline:',e))}</script>
