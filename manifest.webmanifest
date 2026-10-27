@@ -1,6 +1,6 @@
 {
-  "name": "Quét thẻ V6 – Giáo viên",
-  "short_name": "GV Quét QR V6",
+  "name": "Quét thẻ V7 – Giáo viên",
+  "short_name": "GV Quét QR V7",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
