@@ -1,0 +1,100 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function owner(uid) { return signedIn() && request.auth.uid == uid; }
+    // Only the Firebase console / Admin SDK may create or edit admins documents.
+    function isAdmin() {
+      return signedIn() &&
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.role == 'super_admin';
+    }
+    function isLicensed() {
+      return signedIn() &&
+        exists(/databases/$(database)/documents/licenses/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/licenses/$(request.auth.uid)).data.state == 'active' &&
+        get(/databases/$(database)/documents/licenses/$(request.auth.uid)).data.expiresAt > request.time;
+    }
+    function canUse() { return isAdmin() || isLicensed(); }
+
+    match /admins/{uid} {
+      allow get: if owner(uid);
+      allow list, create, update, delete: if false;
+    }
+
+    // Teacher names and emails for administrator approval only; NO student data.
+    match /teacherProfiles/{uid} {
+      allow get: if owner(uid) || isAdmin();
+      allow list: if isAdmin();
+      allow create: if owner(uid)
+        && request.resource.data.keys().hasOnly(['email','displayName','createdAt','version'])
+        && request.resource.data.keys().hasAll(['email','displayName','createdAt','version'])
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.email is string
+        && request.resource.data.displayName is string
+        && request.resource.data.displayName.size() <= 100
+        && request.resource.data.version == 1
+        && request.resource.data.createdAt == request.time;
+      allow update: if owner(uid)
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['displayName'])
+        && request.resource.data.displayName is string
+        && request.resource.data.displayName.size() <= 100;
+      allow delete: if false;
+    }
+
+    // License fields are writable ONLY by verified Super Admin.
+    match /licenses/{uid} {
+      allow get: if owner(uid) || isAdmin();
+      allow list: if isAdmin();
+      allow create, update: if isAdmin()
+        && request.resource.data.keys().hasOnly(['state','plan','expiresAt','updatedAt','updatedBy','note'])
+        && request.resource.data.keys().hasAll(['state','plan','expiresAt','updatedAt','updatedBy','note'])
+        && request.resource.data.state in ['active','suspended']
+        && request.resource.data.plan in ['trial','year','custom']
+        && request.resource.data.expiresAt is timestamp
+        && request.resource.data.updatedAt == request.time
+        && request.resource.data.updatedBy == request.auth.uid
+        && request.resource.data.note is string
+        && request.resource.data.note.size() <= 250;
+      allow delete: if false;
+    }
+
+    // Private classroom/exam/grades. Even Super Admin cannot read another user's data.
+    match /users/{uid}/app/{documentId} {
+      allow get, list: if owner(uid);
+      allow create, update, delete: if owner(uid) && canUse();
+    }
+
+    match /sharedExams/{templateId} {
+      function validTemplate() {
+        let d = request.resource.data;
+        return d.keys().hasOnly([
+          'ownerUid','sourceExamId','authorLabel','title','questionCount',
+          'keys','questionsText','publishedAt','version'
+        ])
+        && d.keys().hasAll([
+          'ownerUid','sourceExamId','authorLabel','title','questionCount',
+          'keys','questionsText','publishedAt','version'
+        ])
+        && d.ownerUid == request.auth.uid
+        && d.sourceExamId is string
+        && d.sourceExamId.size() > 0 && d.sourceExamId.size() <= 160
+        && d.authorLabel is string && d.authorLabel.size() <= 50
+        && d.title is string && d.title.size() > 0 && d.title.size() <= 100
+        && d.questionCount is int && d.questionCount >= 1 && d.questionCount <= 120
+        && d['keys'] is list && d['keys'].size() == d.questionCount
+        && d.questionsText is list && d.questionsText.size() == d.questionCount
+        && d.version == 1 && d.publishedAt is timestamp;
+      }
+      allow get, list: if canUse();
+      allow create: if canUse() && validTemplate()
+        && templateId == request.auth.uid + '_' + request.resource.data.sourceExamId;
+      allow update: if canUse()
+        && resource.data.ownerUid == request.auth.uid
+        && validTemplate()
+        && request.resource.data.ownerUid == resource.data.ownerUid
+        && request.resource.data.sourceExamId == resource.data.sourceExamId;
+      allow delete: if isAdmin() || (canUse() && resource.data.ownerUid == request.auth.uid);
+    }
+  }
+}
