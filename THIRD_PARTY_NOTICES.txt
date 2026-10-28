@@ -1,2 +1,8 @@
 QRCode for JavaScript, Copyright (c) 2009 Kazuhiko Arase; MIT License. Source distributed with npm package qrcode-terminal. See https://www.opensource.org/licenses/mit-license.php
 jsQR 1.4.0, Apache-2.0, served from jsDelivr as in V5.3.
+
+js-aruco2 2.0.0, MIT License (Damiano Falcioni and upstream contributors).
+Runtime source: https://cdn.jsdelivr.net/npm/js-aruco2@2.0.0/src/cv.js and src/aruco.js
+Project: https://github.com/damianofalcioni/js-aruco2
+The full license notice is available at https://github.com/damianofalcioni/js-aruco2/blob/master/LICENSE.txt
+No service fees or external image-processing server; scripts are cached after online installation.

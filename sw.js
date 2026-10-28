@@ -1,9 +1,11 @@
-const CACHE='qr-iphone-v720-licenses-multiteacher-01';
+const CACHE='qr-iphone-v730-aruco-report-01';
 const EXTRA=[
  'https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js',
+ 'https://cdn.jsdelivr.net/npm/js-aruco2@2.0.0/src/cv.js',
+ 'https://cdn.jsdelivr.net/npm/js-aruco2@2.0.0/src/aruco.js',
  'https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js'
 ];
-const LOCAL=['./','./index.html','./manifest.webmanifest','./icon.png','./cloud-sync.js','./firebase-config.js','./hoc-sinh.html','./manifest-hoc-sinh.webmanifest','./qr-wire.js','./qrgen.js','./student-app.js','./teacher-group.js'];
+const LOCAL=['./','./index.html','./manifest.webmanifest','./icon.png','./cloud-sync.js','./firebase-config.js','./hoc-sinh.html','./manifest-hoc-sinh.webmanifest','./qr-wire.js','./qrgen.js','./student-app.js','./teacher-group.js','./report-insights.js','./multi-marker.js','./in-the-aruco.html'];
 self.addEventListener('install',event=>event.waitUntil((async()=>{
  const c=await caches.open(CACHE);await c.addAll(LOCAL);
  for(const url of EXTRA){try{const r=await fetch(url,{mode:'no-cors'});await c.put(url,r)}catch(e){console.warn('Không tải ngoại tuyến',url,e)}}
